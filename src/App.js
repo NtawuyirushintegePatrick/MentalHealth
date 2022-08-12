@@ -11,7 +11,12 @@ import Services from "./components/Services";
 import Contacts from "./components/Contacts";
 import Element  from "./components/Element";
 import Dashboard from "./components/Dashboard";
-// import Sidebar from "./components/Sidebar";
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
+import Blog from "./components/Blog";
+import User from "./components/User";
+import Patients from "./components/Patients"
+import Setting from "./components/Setting";
 
 function App() {
   return (
@@ -28,7 +33,13 @@ function App() {
           <Route path="services" element={<Services />}/>
           <Route path="element" element={<Element/>}/>
           <Route path="dashboard" element={<Dashboard/>}/>
-          {/* <Route path="sidebar" element={<Sidebar/>}/> */}
+          <Route path="signin" element={<Signin/>}/>
+          <Route path="signup" element={<Signup/>}/>
+          <Route path="blog" element={<Blog/>}/> 
+          <Route path="user" element={<User/>}/> 
+          <Route path="patients" element={<Patients/>}/> 
+          <Route path="setting" element={<Setting/>}/>
+
         </Route>
       </Routes>
   </BrowserRouter>

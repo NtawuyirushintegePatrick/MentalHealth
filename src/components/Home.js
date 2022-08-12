@@ -67,7 +67,7 @@ const Home = () => {
                 </div>
                 <div className="header-right-btn f-right d-none d-lg-block ml-15">
                   <a href="#" className="btn header-btn">
-                    Make an Appointment
+                    Sign up
                   </a>
                 </div>
               </div>
