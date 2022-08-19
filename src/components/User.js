@@ -2,6 +2,7 @@ import { LogoDev } from "@mui/icons-material";
 import { Select } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import * as mdb from "mdb-ui-kit";
 
 const dashboardui = () => {
   return (
@@ -42,7 +43,7 @@ const dashboardui = () => {
                   </Link>
                 </li>
                 <li>
-                  <a className="show-cat-btn" href="/Blog">
+                  <Link className="show-cat-btn" to="/Blog">
                     <span className="icon document" aria-hidden="true" />
                     Blogs
                     <span
@@ -52,7 +53,7 @@ const dashboardui = () => {
                       <span className="sr-only">Open list</span>
                       <span className="icon arrow-down" aria-hidden="true" />
                     </span>
-                  </a>
+                  </Link>
 
                   <Link className="show-cat-btn" to="/user">
                     <span className="icon image" aria-hidden="true" />
@@ -60,30 +61,30 @@ const dashboardui = () => {
                   </Link>
                 </li>
                 <li>
-                  <a className="show-cat-btn" href="##">
+                  <Link className="show-cat-btn" to="/articles">
                     <span className="icon paper" aria-hidden="true" />
-                    Therapist
-                  </a>
+                    Articles
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/Dashboard">
+                  <Link to="/quotes">
                     <span className="icon message" aria-hidden="true" />
-                    Chats
+                    Quotes
                   </Link>
-                  <span className="msg-counter">7</span>
+                  
                 </li>
               </ul>
               <ul className="sidebar-body-menu">
                 <li>
-                  <Link to="/patients">
+                  <Link to="/books">
                     <span className="icon edit" aria-hidden="true" />
-                    Patients
+                    Books
                   </Link>
                 </li>
                 <li>
-                  <Link to="/setting">
+                  <Link to="/videos">
                     <span className="icon setting" aria-hidden="true" />
-                    Settings
+                    Videos
                   </Link>
                 </li>
               </ul>
@@ -287,25 +288,26 @@ const dashboardui = () => {
             <div className="container">
               <h2 className="main-title">Users</h2>
               <div className="row stat-cards">
+                {/* <div className="btn-container">
+                  <button className="action-btn">All Users</button>
+                  <button className="action-btn">New User</button>
+                  <button className="action-btn">Edit User</button>
+                  <button className="action-btn">Delete User</button>
+                </div> */}
+
                 <div className="user-container">
                   <div className="user-container-form">
                     <input type="text" placeholder="First name" />
                     <input type="text" placeholder="Last name name" />
                     <input type="text" placeholder="Kind of Health problem" />
                     <div />
-                    <label htmlFor="cars">Sex:</label>
-                    <select name="sex" id="sex">
-                      <optgroup label="Sex">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                      </optgroup>
-                    </select>
+                    <div className="dropdown"></div>
                     <div className="picture-container">
                       <img src={LogoDev} alt="Photo" />
                     </div>
-                    <div className="text-area">
+                    {/* <div className="text-area">
                       <textarea className="description"></textarea>
-                    </div>
+                    </div> */}
                     <div className="user-button-field">
                       <button className="user-button">Add User</button>
                     </div>

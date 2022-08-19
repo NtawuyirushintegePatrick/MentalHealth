@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Contacts = () => {
   return (
@@ -25,9 +26,9 @@ const Contacts = () => {
             {/* Logo */}
             <div className="col-xl-2 col-lg-2 col-md-1">
               <div className="logo">
-                <a href="index.html">
+                <Link to="/">
                   <img src="assets/img/logo/logo.png" alt="" />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-xl-10 col-lg-10 col-md-10">

@@ -41,7 +41,7 @@ const dashboardui = () => {
               </Link>
             </li>
             <li>
-              <a className="show-cat-btn" href="/Blog">
+              <Link className="show-cat-btn" to="/Blog">
                 <span className="icon document" aria-hidden="true" />
                 Blogs
                 <span
@@ -51,9 +51,9 @@ const dashboardui = () => {
                   <span className="sr-only">Open list</span>
                   <span className="icon arrow-down" aria-hidden="true" />
                 </span>
-              </a>
+              </Link>
               
-              <a className="show-cat-btn" href="##">
+              <Link className="show-cat-btn" to="/user">
                 <span className="icon image" aria-hidden="true" />
                 Users
                 <span
@@ -63,35 +63,34 @@ const dashboardui = () => {
                   <span className="sr-only">Open list</span>
                   <span className="icon arrow-down" aria-hidden="true" />
                 </span>
-              </a>
+              </Link>
               
             </li>
             <li>
-              <a className="show-cat-btn" href="##">
+              <Link className="show-cat-btn" to="/articles">
                 <span className="icon paper" aria-hidden="true" />
-                Therapist
-               
-              </a>
+                Articles
+              </Link>
             </li>
             <li>
-              <Link  to="/Dashboard">
+              <Link  to="/Quotes">
                 <span className="icon message" aria-hidden="true" />
-                Chats
+                Quotes
               </Link>
-              <span className="msg-counter">7</span>
+              
             </li>
           </ul>
           <ul className="sidebar-body-menu">
             <li>
-              <Link to="/patients">
+              <Link to="/books">
                 <span className="icon edit" aria-hidden="true" />
-                Patients
+                Books
               </Link>
             </li>
             <li>
-              <Link to="/setting">
+              <Link to="/videos">
                 <span className="icon setting" aria-hidden="true" />
-                Settings
+                Videos
               </Link>
             </li>
           </ul>
@@ -275,80 +274,9 @@ const dashboardui = () => {
       {/* ! Main */}
       <main className="main users chart-page" id="skip-target">
         <div className="container">
-          <h2 className="main-title">Patients</h2>
+          <h2 className="main-title">Articles</h2>
           <div className="row stat-cards">
-            {/* <div className="col-md-6 col-xl-3">
-              <article className="stat-cards-item">
-                <div className="stat-cards-icon primary">
-                  <i data-feather="bar-chart-2" aria-hidden="true" />
-                </div>
-                <div className="stat-cards-info">
-                  <p className="stat-cards-info__num">1478 286</p>
-                  <p className="stat-cards-info__title">Total users</p>
-                  <p className="stat-cards-info__progress">
-                    <span className="stat-cards-info__profit success">
-                      <i data-feather="trending-up" aria-hidden="true" />
-                      4.07%
-                    </span>
-                    Last month
-                  </p>
-                </div>
-              </article>
-            </div> */}
-            {/* <div className="col-md-6 col-xl-3">
-              <article className="stat-cards-item">
-                <div className="stat-cards-icon warning">
-                  <i data-feather="file" aria-hidden="true" />
-                </div>
-                <div className="stat-cards-info">
-                  <p className="stat-cards-info__num">1478 286</p>
-                  <p className="stat-cards-info__title">Total Blogs</p>
-                  <p className="stat-cards-info__progress">
-                    <span className="stat-cards-info__profit success">
-                      <i data-feather="trending-up" aria-hidden="true" />
-                      0.24%
-                    </span>
-                    Last month
-                  </p>
-                </div>
-              </article>
-            </div> */}
-            {/* <div className="col-md-6 col-xl-3">
-              <article className="stat-cards-item">
-                <div className="stat-cards-icon purple">
-                  <i data-feather="file" aria-hidden="true" />
-                </div>
-                <div className="stat-cards-info">
-                  <p className="stat-cards-info__num">1478 286</p>
-                  <p className="stat-cards-info__title">Total Therapist</p>
-                  <p className="stat-cards-info__progress">
-                    <span className="stat-cards-info__profit danger">
-                      <i data-feather="trending-down" aria-hidden="true" />
-                      1.64%
-                    </span>
-                    Last month
-                  </p>
-                </div>
-              </article>
-            </div> */}
-            {/* <div className="col-md-6 col-xl-3">
-              <article className="stat-cards-item">
-                <div className="stat-cards-icon success">
-                  <i data-feather="feather" aria-hidden="true" />
-                </div>
-                <div className="stat-cards-info">
-                  <p className="stat-cards-info__num">1478 286</p>
-                  <p className="stat-cards-info__title">Total Patients</p>
-                  <p className="stat-cards-info__progress">
-                    <span className="stat-cards-info__profit warning">
-                      <i data-feather="trending-up" aria-hidden="true" />
-                      0.00%
-                    </span>
-                    Last month
-                  </p>
-                </div>
-              </article>
-            </div> */}
+            
           </div>
         </div>
       </main>

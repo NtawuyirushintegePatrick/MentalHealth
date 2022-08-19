@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -37,7 +38,7 @@ const Home = () => {
                   <nav>
                     <ul id="navigation">
                       <li>
-                        <a href="#Home">Home</a>
+                        <a href="#">Home</a>
                       </li>
                       <li>
                         <a href="#about">About</a>
@@ -66,9 +67,9 @@ const Home = () => {
                   </nav>
                 </div>
                 <div className="header-right-btn f-right d-none d-lg-block ml-15">
-                  <a href="#" className="btn header-btn">
-                    Sign up
-                  </a>
+                  <Link to="/signin" className="btn header-btn">
+                    Login
+                  </Link>
                 </div>
               </div>
             </div>
@@ -84,7 +85,7 @@ const Home = () => {
   </header>
   <main>
     {/*? Slider Area Start*/}
-    <div className="slider-area">
+    <div className="slider-area" id='home'>
       <div className="slider-active dot-style">
         {/* Slider Single */}
         <div className="single-slider d-flex align-items-center slider-height">
@@ -92,33 +93,30 @@ const Home = () => {
             <div className="row align-items-center">
               <div className="col-xl-7 col-lg-8 col-md-10 ">
                 <div className="hero-wrapper">
-                  {/* Video icon */}
-                  <div className="video-icon">
-                    <a
-                      className="popup-video btn-icon"
-                      href="https://www.youtube.com/watch?v=up68UAfH0d0"
-                      data-animation="bounceIn"
-                      data-delay=".4s"
-                    >
-                      <i className="fas fa-play" />
-                    </a>
-                  </div>
                   <div className="hero__caption">
                     <h1 data-animation="fadeInUp" data-delay=".3s">
-                      Health is wealth keep it healthy{" "}
+                      Health is wealth keep it healthy
                     </h1>
                     <p data-animation="fadeInUp" data-delay=".6s">
                       Almost before we knew it, we
                       <br /> had left the ground
                     </p>
-                    <a
-                      href="#"
+                    <Link
+                      to="/servey"
                       className="btn"
                       data-animation="fadeInLeft"
                       data-delay=".3s"
                     >
-                      Take a Service
-                    </a>
+                      Take mental health Servey
+                    </Link>
+                    <Link
+                      to="/"
+                      className="btn"
+                      data-animation="fadeInLeft"
+                      data-delay=".3s"
+                    >
+                      Join Group for Conseilling
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -185,17 +183,12 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="col-xl-2 col-lg-3 col-md-4">
-              <a href="services.html" className="btn f-right sm-left">
-                Take a Service
-              </a>
-            </div>
           </div>
         </div>
       </div>
     </section>
     {/*? Services Area Start */}
-    <div className="service-area">
+    <div className="service-area" id='services'>
       <div className="container">
         <div className="row">
           <div className="col-lg-4 col-md-6 col-sm-6">
@@ -205,14 +198,14 @@ const Home = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Physical Activity</a>
+                  <a href="services.html">Article one</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
                   dignissim dolor, a pretium mi sem ut ipsum.
                 </p>
                 <a href="services.html" className="plus-btn">
-                  <i className="ti-plus" />
+                  {/* <i className="ti-plus" /> */}
                 </a>
               </div>
             </div>
@@ -224,14 +217,14 @@ const Home = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Physical Activity</a>
+                  <a href="services.html">Article two</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
                   dignissim dolor, a pretium mi sem ut ipsum.
                 </p>
                 <a href="services.html" className="plus-btn">
-                  <i className="ti-plus" />
+                  {/* <i className="ti-plus" /> */}
                 </a>
               </div>
             </div>
@@ -243,14 +236,14 @@ const Home = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Physical Activity</a>
+                  <a href="services.html">Article three</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
                   dignissim dolor, a pretium mi sem ut ipsum.
                 </p>
                 <a href="services.html" className="plus-btn">
-                  <i className="ti-plus" />
+                  {/* <i className="ti-plus" /> */}
                 </a>
               </div>
             </div>
@@ -321,7 +314,7 @@ const Home = () => {
     </div>
     {/* video_end */}
     {/*? Blog Area Start */}
-    <section className="home-blog-area section-padding30">
+    <section className="home-blog-area section-padding30" id='blogs'>
       <div className="container">
         {/* Section Tittle */}
         <div className="row justify-content-center">
@@ -393,7 +386,7 @@ const Home = () => {
     </section>
     {/* Blog Area End */}
     {/*? About Law Start*/}
-    <section className="about-low-area mt-30">
+    <section className="about-low-area mt-30" id='about'>
       <div className="container">
         <div className="about-cap-wrapper">
           <div className="row">
@@ -404,9 +397,9 @@ const Home = () => {
                   <h2>100% satisfaction guaranteed.</h2>
                 </div>
                 <p>Almost before we knew it, we had left the ground</p>
-                <a href="about.html" className="border-btn">
+                {/* <a href="about.html" className="border-btn">
                   Make an Appointment
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
@@ -423,12 +416,12 @@ const Home = () => {
     </section>
     {/* About Law End*/}
   </main>
-  <footer>
+  <footer >
     <div
       className="footer-wrappr section-bg3"
       data-background="assets/img/gallery/footer-bg.png"
     >
-      <div className="footer-area footer-padding ">
+      <div className="footer-area footer-padding " id='contact'>
         <div className="container">
           <div className="row justify-content-between">
             <div className="col-xl-8 col-lg-8 col-md-6 col-sm-12">
@@ -541,11 +534,11 @@ const Home = () => {
                 <div className="footer-copy-right">
                   <p>
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                    Copyright © All rights reserved | This template is made with{" "}
-                    <i className="fa fa-heart" aria-hidden="true" /> by{" "}
+                    Copyright © All rights reserved {" "}
+                    {/* <i className="fa fa-heart" aria-hidden="true" /> by{" "}
                     <a href="https://colorlib.com" target="_blank">
                       Colorlib
-                    </a>
+                    </a> */}
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   </p>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
+
 const dashboardui = () => {
   return ( 
     <>
@@ -52,14 +53,7 @@ const dashboardui = () => {
                   <span className="icon arrow-down" aria-hidden="true" />
                 </span>
               </Link>
-              <ul className="cat-sub-menu">
-                <li>
-                  <a href="posts.html">All Blogs</a>
-                </li>
-                <li>
-                  <a href="new-post.html">Add new Blog</a>
-                </li>
-              </ul>
+              
             </li>
             <li>
               
@@ -71,7 +65,7 @@ const dashboardui = () => {
               </ul>
             </li>
             <li>
-              <a className="show-cat-btn" href="##">
+              <Link className="show-cat-btn" to="/user">
                 <span className="icon image" aria-hidden="true" />
                 Users
                 <span
@@ -81,20 +75,13 @@ const dashboardui = () => {
                   <span className="sr-only">Open list</span>
                   <span className="icon arrow-down" aria-hidden="true" />
                 </span>
-              </a>
-              {/* <ul className="cat-sub-menu">
-                <li>
-                  <a href="media-01.html">Media-01</a>
-                </li>
-                <li>
-                  <a href="media-02.html">Media-02</a>
-                </li>
-              </ul> */}
+              </Link>
+              
             </li>
             <li>
-              <a className="show-cat-btn" href="##">
+              <Link className="show-cat-btn" to="/articles">
                 <span className="icon paper" aria-hidden="true" />
-                Therapist
+                Articles
                 <span
                   className="category__btn transparent-btn"
                   title="Open list"
@@ -102,79 +89,33 @@ const dashboardui = () => {
                   <span className="sr-only">Open list</span>
                   <span className="icon arrow-down" aria-hidden="true" />
                 </span>
-              </a>
-              {/* <ul className="cat-sub-menu">
-                <li>
-                  <a href="pages.html">All pages</a>
-                </li>
-                <li>
-                  <a href="new-page.html">Add new page</a>
-                </li>
-              </ul> */}
+              </Link>
+              
             </li>
             <li>
-              <Link  to="/Dashboard">
+              <Link  to="/quotes">
                 <span className="icon message" aria-hidden="true" />
-                Chats
+                Quotes
               </Link>
-              <span className="msg-counter">7</span>
+       
             </li>
           </ul>
-          {/* <span className="system-menu__title">system</span> */}
+          
           <ul className="sidebar-body-menu">
             <li>
-              <a href="appearance.html">
+              <Link to="/books">
                 <span className="icon edit" aria-hidden="true" />
-                Patients
-              </a>
+                Books
+              </Link>
             </li>
             <li>
-              {/* <a className="show-cat-btn" href="##">
-                <span className="icon category" aria-hidden="true" />
-                Extentions
-                <span
-                  className="category__btn transparent-btn"
-                  title="Open list"
-                >
-                  <span className="sr-only">Open list</span>
-                  <span className="icon arrow-down" aria-hidden="true" />
-                </span>
-              </a> */}
-              {/* <ul className="cat-sub-menu">
-                <li>
-                  <a href="extention-01.html">Extentions-01</a>
-                </li>
-                <li>
-                  <a href="extention-02.html">Extentions-02</a>
-                </li>
-              </ul> */}
+             
             </li>
             <li>
-              {/* <a className="show-cat-btn" href="##">
-                <span className="icon user-3" aria-hidden="true" />
-                Users
-                <span
-                  className="category__btn transparent-btn"
-                  title="Open list"
-                >
-                  <span className="sr-only">Open list</span>
-                  <span className="icon arrow-down" aria-hidden="true" />
-                </span>
-              </a> */}
-              {/* <ul className="cat-sub-menu">
-                <li>
-                  <a href="users-01.html"> All Users</a>
-                </li>
-                <li>
-                  <a href="users-02.html"> Add New User</a>
-                </li>
-              </ul> */}
-            </li>
-            <li>
-              <a href="##">
+              <Link to="/videos">
                 <span className="icon setting" aria-hidden="true" />
-                Settings
-              </a>
+                Videos
+              </Link>
             </li>
           </ul>
         </div>
@@ -201,7 +142,7 @@ const dashboardui = () => {
       </div>
     </aside>
     <div className="main-wrapper">
-      {/* ! Main nav */}
+      
       <nav className="main-nav--bg">
         <div className="container main-nav">
           <div className="main-nav-start">
@@ -435,19 +376,15 @@ const dashboardui = () => {
           <div className="row">
             <div className="col-lg-9">
               <div className="chart">
-                <canvas id="myChart" aria-label="Site statistics" role="img" />
+                {/* <canvas id="myChart" aria-label="Site statistics" role="img" /> */}
               </div>
               <div className="users-table table-wrapper">
                 <table className="posts-table">
                   <thead>
                     <tr className="users-table-info">
                       <th>
-                        {/* <label className="users-table__checkbox ms-20">
-                          <input type="checkbox" className="check-all" />
-                          Thumbnail
-                        </label> */}
                       </th>
-                      <th>Title</th>
+                      <th>Blog Title</th>
                       <th>Author</th>
                       <th>Status</th>
                       <th>Date</th>
@@ -460,32 +397,14 @@ const dashboardui = () => {
                         <label className="users-table__checkbox">
                           <input type="checkbox" className="check" />
                           <div className="categories-table-img">
-                            {/* <picture>
-                              <source
-                                srcSet="./img/categories/01.webp"
-                                type="image/webp"
-                              />
-                              <img
-                                src="./img/categories/01.jpg"
-                                alt="category"
-                              />
-                            </picture> */}
+                         
                           </div>
                         </label>
                       </td>
                       <td>Starting your traveling blog with Vasco</td>
                       <td>
                         <div className="pages-table-img">
-                          {/* <picture>
-                            <source
-                              srcSet="./img/avatar/avatar-face-04.webp"
-                              type="image/webp"
-                            />
-                            <img
-                              src="./img/avatar/avatar-face-04.png"
-                              alt="User Name"
-                            />
-                          </picture> */}
+                     
                           Jenny Wilson
                         </div>
                       </td>
@@ -525,32 +444,14 @@ const dashboardui = () => {
                         <label className="users-table__checkbox">
                           <input type="checkbox" className="check" />
                           <div className="categories-table-img">
-                            {/* <picture>
-                              <source
-                                srcSet="./img/categories/02.webp"
-                                type="image/webp"
-                              />
-                              <img
-                                src="./img/categories/02.jpg"
-                                alt="category"
-                              />
-                            </picture> */}
+                       
                           </div>
                         </label>
                       </td>
                       <td>Start a blog to reach your creative peak</td>
                       <td>
                         <div className="pages-table-img">
-                          {/* <picture>
-                            <source
-                              srcSet="./img/avatar/avatar-face-03.webp"
-                              type="image/webp"
-                            />
-                            <img
-                              src="./img/avatar/avatar-face-03.png"
-                              alt="User Name"
-                            />
-                          </picture> */}
+                        
                           Annette Black
                         </div>
                       </td>
@@ -590,32 +491,14 @@ const dashboardui = () => {
                         <label className="users-table__checkbox">
                           <input type="checkbox" className="check" />
                           <div className="categories-table-img">
-                            {/* <picture>
-                              <source
-                                srcSet="./img/categories/03.webp"
-                                type="image/webp"
-                              />
-                              <img
-                                src="./img/categories/03.jpg"
-                                alt="category"
-                              />
-                            </picture> */}
+                      
                           </div>
                         </label>
                       </td>
                       <td>Helping a local business reinvent itself</td>
                       <td>
                         <div className="pages-table-img">
-                          {/* <picture>
-                            <source
-                              srcSet="./img/avatar/avatar-face-02.webp"
-                              type="image/webp"
-                            />
-                            <img
-                              src="./img/avatar/avatar-face-02.png"
-                              alt="User Name"
-                            />
-                          </picture> */}
+                         
                           Kathryn Murphy
                         </div>
                       </td>
@@ -655,32 +538,14 @@ const dashboardui = () => {
                         <label className="users-table__checkbox">
                           <input type="checkbox" className="check" />
                           <div className="categories-table-img">
-                            {/* <picture>
-                              <source
-                                srcSet="./img/categories/04.webp"
-                                type="image/webp"
-                              />
-                              <img
-                                src="./img/categories/04.jpg"
-                                alt="category"
-                              />
-                            </picture> */}
+                            
                           </div>
                         </label>
                       </td>
                       <td>Caring is the new marketing</td>
                       <td>
                         <div className="pages-table-img">
-                          {/* <picture>
-                            <source
-                              srcSet="./img/avatar/avatar-face-05.webp"
-                              type="image/webp"
-                            />
-                            <img
-                              src="./img/avatar/avatar-face-05.png"
-                              alt="User Name"
-                            />
-                          </picture> */}
+                          
                           Guy Hawkins
                         </div>
                       </td>
@@ -720,32 +585,12 @@ const dashboardui = () => {
                         <label className="users-table__checkbox">
                           <input type="checkbox" className="check" />
                           <div className="categories-table-img">
-                            {/* <picture>
-                              <source
-                                srcSet="./img/categories/01.webp"
-                                type="image/webp"
-                              />
-                              <img
-                                src="./img/categories/01.jpg"
-                                alt="category"
-                              />
-                            </picture> */}
                           </div>
                         </label>
                       </td>
                       <td>How to build a loyal community online and offline</td>
                       <td>
                         <div className="pages-table-img">
-                          {/* <picture>
-                            <source
-                              srcSet="./img/avatar/avatar-face-03.webp"
-                              type="image/webp"
-                            />
-                            <img
-                              src="./img/avatar/avatar-face-03.png"
-                              alt="User Name"
-                            />
-                          </picture> */}
                           Robert Fox
                         </div>
                       </td>
@@ -785,32 +630,14 @@ const dashboardui = () => {
                         <label className="users-table__checkbox">
                           <input type="checkbox" className="check" />
                           <div className="categories-table-img">
-                            {/* <picture>
-                              <source
-                                srcSet="./img/categories/03.webp"
-                                type="image/webp"
-                              />
-                              <img
-                                src="./img/categories/03.jpg"
-                                alt="category"
-                              />
-                            </picture> */}
+                           
                           </div>
                         </label>
                       </td>
                       <td>How to build a loyal community online and offline</td>
                       <td>
                         <div className="pages-table-img">
-                          {/* <picture>
-                            <source
-                              srcSet="./img/avatar/avatar-face-03.webp"
-                              type="image/webp"
-                            />
-                            <img
-                              src="./img/avatar/avatar-face-03.png"
-                              alt="User Name"
-                            />
-                          </picture> */}
+                      
                           Robert Fox
                         </div>
                       </td>
@@ -856,9 +683,7 @@ const dashboardui = () => {
                   aria-label="Customers statistics"
                   role="img"
                 />
-                {/*              <p class="customers__title">New Customers <span>+958</span></p>
-        <p class="customers__date">28 Daily Avg.</p>
-        <picture><source srcset="./img/svg/customers.svg" type="image/webp"><img src="./img/svg/customers.svg" alt=""></picture> */}
+              
               </article>
               <article className="white-block">
                 <div className="top-cat-title">
