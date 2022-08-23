@@ -95,7 +95,7 @@ const Home = () => {
                 <div className="hero-wrapper">
                   <div className="hero__caption">
                     <h1 data-animation="fadeInUp" data-delay=".3s">
-                      Health is wealth keep it healthy
+                     Mental Health is wealth keep it healthy mentally
                     </h1>
                     <p data-animation="fadeInUp" data-delay=".6s">
                       Almost before we knew it, we
@@ -110,7 +110,7 @@ const Home = () => {
                       Take mental health Servey
                     </Link>
                     <Link
-                      to="/"
+                      to="/group"
                       className="btn"
                       data-animation="fadeInLeft"
                       data-delay=".3s"
@@ -198,7 +198,7 @@ const Home = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Article one</a>
+                  <a href="services.html">Service one</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
@@ -217,7 +217,7 @@ const Home = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Article two</a>
+                  <a href="services.html">Service two</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
@@ -236,7 +236,7 @@ const Home = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Article three</a>
+                  <a href="services.html">Service three</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
@@ -432,10 +432,10 @@ const Home = () => {
                     <img src="assets/img/logo/logo2_footer.png" alt="" />
                   </a>
                 </div>
-                <d iv="" className="header-area">
+                {/* <d iv="" className="header-area">
                   <div className="main-header main-header2">
                     <div className="menu-main d-flex align-items-center justify-content-start">
-                      {/* Main-menu */}
+                      
                       <div className="main-menu main-menu2">
                         <nav>
                           <ul>
@@ -459,7 +459,7 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                </d>
+                </d> */}
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">

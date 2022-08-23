@@ -21,6 +21,7 @@ import Videos from "./components/Videos";
 import Books from "./components/Books";
 import Servey from "./components/Servey";
 import Conseilling from "./components/Conseilling";
+import  Group  from "./components/Group";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="books" element={<Books/>}/>
           <Route path="servey" element={<Servey/>}/>
           <Route path="Conseilling" element={<Conseilling/>}/>
+          <Route path="Group" element={<Group/>}/>
 
 
         </Route>

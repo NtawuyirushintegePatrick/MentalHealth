@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
-import { ToastContainer, toast } from "react-toastify";
+// import axios from 'axios'
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Signin = () => {
@@ -9,17 +9,17 @@ const Signin = () => {
 const [Email,setEmail]=useState("")
 const [Password,setPassword]=useState("")
 
-const loginData = {
-  email: Email,
-  password: Password,
-}
+// const loginData = {
+//   email: Email,
+//   password: Password,
+// }
 
 
-const showToastMessage = () => {
-  toast.success("Successfully logged in !", {
-    position: toast.POSITION.TOP_RIGHT,
-  });
-};
+// const showToastMessage = () => {
+//   toast.success("Successfully logged in !", {
+//     position: toast.POSITION.TOP_RIGHT,
+//   });
+// };
 
 
 // async function submitHandler(e) {
@@ -40,7 +40,8 @@ const showToastMessage = () => {
   <div className="layer" />
   <main className="page-center">
     <article className="sign-up">
-      <h1 className="sign-up__title">Welcome back!</h1>
+      {/* <h1 className="sign-up__title">Welcome back!</h1> */}
+      <Link to="/"><b>Back to Home </b></Link>
       <p className="sign-up__subtitle">Sign in to your account to continue</p>
       {/* <ToastContainer /> */}
       <form className="sign-up-form form" action="" method="" style={{height:"50%",width:"500px"}}>

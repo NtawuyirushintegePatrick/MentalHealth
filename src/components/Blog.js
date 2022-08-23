@@ -1,7 +1,70 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { React, useState } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import DeleteIcon from '@mui/icons-material/Delete';
+import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
 
-const dashboardui = () => {
+import { Link } from "react-router-dom";
+import { EditNotifications } from "@mui/icons-material";
+
+const style = {
+  position: "absolute",
+  top: "40%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  // border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
+const Dashboardui = () => {
+  // const [selectedImage, setSelectedImage] = useState("");
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  function createData(name, calories, fat, carbs, protein) {
+    return { name, calories, fat, carbs, protein };
+  }
+
+  const rows = [
+    createData("Image1", 'Blog Title1', 'Content1', 'Time1', 
+     <Stack direction="row" alignItems="center" spacing={1} style={{background:'white'}}>
+    {/* <IconButton aria-label="delete" size="small">
+      <DeleteIcon fontSize="inherit" />
+    </IconButton> */}
+    <IconButton aria-label="delete" size="small" style={{Left:'50px',color:'red'}}>
+      <DeleteIcon fontSize="small" />
+    </IconButton>
+    <IconButton aria-label="edit" size="small" style={{Left:'50px'}}>
+      <EditNotifications fontSize="small" />
+    </IconButton>
+    {/* <IconButton aria-label="delete" size="large">
+      <DeleteIcon />
+    </IconButton>
+    <IconButton aria-label="delete" size="large">
+      <DeleteIcon fontSize="inherit" />
+    </IconButton> */}
+  </Stack>),
+    createData("Image2", 'Blog Title1', 'Content1', 'Time1', 'Actions1'),
+    createData("Image3", 'Blog Title1', 'Content1', 'Time1', 'Actions1'),
+    createData("Image4", 'Blog Title1', 'Content1', 'Time1', 'Actions1'),
+    createData("Image5", 'Blog Title1', 'Content1', 'Time1', 'Actions1'),
+  ];
+
   return (
     <>
       <div className="layer" />
@@ -168,72 +231,47 @@ const dashboardui = () => {
                     aria-hidden="true"
                   />
                 </button>
-                <div className="notification-wrapper">
-                  <button
-                    className="gray-circle-btn dropdown-btn"
-                    title="To messages"
-                    type="button"
-                  >
-                    <span className="sr-only">To messages</span>
-                    <span
-                      className="icon notification active"
-                      aria-hidden="true"
-                    />
-                  </button>
-                  <ul className="users-item-dropdown notification-dropdown dropdown">
-                    <li>
-                      <a href="##">
-                        <div className="notification-dropdown-icon info">
-                          <i data-feather="check" />
-                        </div>
-                        <div className="notification-dropdown-text">
-                          <span className="notification-dropdown__title">
-                            System just updated
-                          </span>
-                          <span className="notification-dropdown__subtitle">
-                            The system has been successfully upgraded. Read more
-                            here.
-                          </span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="##">
-                        <div className="notification-dropdown-icon danger">
-                          <i data-feather="info" aria-hidden="true" />
-                        </div>
-                        <div className="notification-dropdown-text">
-                          <span className="notification-dropdown__title">
-                            The cache is full!
-                          </span>
-                          <span className="notification-dropdown__subtitle">
-                            Unnecessary caches take up a lot of memory space and
-                            interfere ...
-                          </span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="##">
-                        <div className="notification-dropdown-icon info">
-                          <i data-feather="check" aria-hidden="true" />
-                        </div>
-                        <div className="notification-dropdown-text">
-                          <span className="notification-dropdown__title">
-                            New Subscriber here!
-                          </span>
-                          <span className="notification-dropdown__subtitle">
-                            A new subscriber has subscribed.
-                          </span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a className="link-to-page" href="##">
-                        Go to Notifications page
-                      </a>
-                    </li>
-                  </ul>
+                <div className="notification center">
+                  <input type="checkbox" name="" id="" />
+                  <div className="num number center">4</div>
+                  <div className="box">
+                    <div className="heading center">
+                      <p>
+                        <i className="fas fa-bell"></i>
+                        <span className="number">4</span>Notifications
+                      </p>
+                    </div>
+
+                    <div className="notification-box">
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div className="nav-user-wrapper">
                   <button
@@ -286,32 +324,142 @@ const dashboardui = () => {
               <h2 className="main-title">Blogs</h2>
               <br />
               <div className="row stat-cards">
-                {/* <div className="btn-container">
-                    <button className="action-btn">All Blogs</button>
-                    <button className="action-btn">New Blog</button>
-                    <button className="action-btn">Edit Blog</button>
-                    <button className="action-btn">Delete Blog</button>
-                  </div> */}
                 <div className="user-container">
-                  <div className="user-container-form">
+                  <Button onClick={handleOpen}>Create blog</Button>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style}>
+                      <Typography
+                        id="modal-modal-title"
+                        variant="h6"
+                        component="h2"
+                      >
+                        <h>New blog being created</h>
+                      </Typography>
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <div className="user-container-form">
+                          <label>
+                            <b>Title:</b>
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder=" Title"
+                            name="title"
+                          />
+                          <label>
+                            <b>Content</b>
+                          </label>
+                          <br />
+                          <textarea
+                            className="form-control"
+                            placeholder="Content"
+                            name="Content"
+                          ></textarea>
+                          <br />
+                          <label>
+                            <b>Image</b>
+                          </label>
+                          <input
+                            type="file"
+                            name="myImage"
+                            className="form-control"
+                            placeholder="Image"
+                          />
+                          <div className="user-button-field">
+                            <button className="user-button">Post Blog</button>
+                          </div>
+                        </div>
+                      </Typography>
+                    </Box>
+                  </Modal>
+                  <br />
+                  <br />
+                  <TableContainer component={Paper}>
+                    <Table
+                      sx={{ minWidth: 650 }}
+                      size="small"
+                      aria-label="a dense table"
+                    >
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Blog Image</TableCell>
+                          <TableCell align="right">Title</TableCell>
+                          <TableCell align="right">Content</TableCell>
+                          <TableCell align="right">Time</TableCell>
+                          <TableCell align="right">Action</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows.map((row) => (
+                          <TableRow
+                            key={row.name}
+                            sx={{
+                              "&:last-child td, &:last-child th": { border: 0 },
+                            }}
+                          >
+                            <TableCell component="th" scope="row">
+                              {row.name}
+                            </TableCell>
+                            <TableCell align="right">{row.calories}</TableCell>
+                            <TableCell align="right">{row.fat}</TableCell>
+                            <TableCell align="right">{row.carbs}</TableCell>
+                            <TableCell align="right">{row.protein}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+
+                  {/* <Button onClick={handleOpen}>update Blog</Button>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style}>
+                      <Typography
+                        id="modal-modal-title"
+                        variant="h6"
+                        component="h2"
+                      >
+                        Text in a modal
+                      </Typography>
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        Duis mollis, est non commodo luctus, nisi erat porttitor
+                        ligula.
+                      </Typography>
+                    </Box>
+                  </Modal> */}
+
+                  {/* <div className="user-container-form">
                     <label><b>Title:</b></label>
-                    <input type="text" placeholder=" Title" />
-                    <label><b>Content</b></label>
-                    <input type="text" placeholder="Content" />
+                    <input type="text" className="form-control" placeholder=" Title" name="title"/>
+                    <label><b>Content</b></label><br/>
+                    <textarea className="form-control" placeholder="Content" name="Content"></textarea><br/>
                     <label><b>Image</b></label>
-                    <input type="text" placeholder="Image" />
+                    <input 
+                    type="file" 
+                    name="myImage"  
+                    className="form-control"
+                    placeholder="Image" 
+                    />
                     <div className="user-button-field">
                       <button className="user-button">Post Blog</button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-lg-9">
                     <div className="users-table table-wrapper">
                       <table className="posts-table">
                         <thead>
                           <tr className="users-table-info">
-                            <th></th>
                             <th>Blog Title</th>
                             <th>Author</th>
                             <th>Status</th>
@@ -586,7 +734,7 @@ const dashboardui = () => {
                       </table>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </main>
@@ -624,4 +772,4 @@ const dashboardui = () => {
   );
 };
 
-export default dashboardui;
+export default Dashboardui;

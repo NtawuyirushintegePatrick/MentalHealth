@@ -1,7 +1,27 @@
-import React from "react";
+import { React, useState } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
 import { Link } from "react-router-dom";
 
-const dashboardui = () => {
+const style = {
+  position: "absolute",
+  top: "40%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  // border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
+const Dashboardui = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <>
       <div className="layer" />
@@ -40,7 +60,6 @@ const dashboardui = () => {
                   </Link>
                 </li>
                 <li>
-          
                   <Link className="show-cat-btn" to="/Blog">
                     <span className="icon document" aria-hidden="true" />
                     Blogs
@@ -52,47 +71,38 @@ const dashboardui = () => {
                       <span className="icon arrow-down" aria-hidden="true" />
                     </span>
                   </Link>
-              
                 </li>
-                
+
                 <Link className="show-cat-btn" to="/user">
                   <span className="icon image" aria-hidden="true" />
                   Users
                 </Link>
-                
+
                 <li>
-               
                   <Link className="show-cat-btn" to="/articles">
                     <span className="icon paper" aria-hidden="true" />
                     Articles
                   </Link>
-                 
                 </li>
                 <li>
-                  
                   <Link to="/quotes">
                     <span className="icon message" aria-hidden="true" />
                     Quotes
                   </Link>
-                  
                 </li>
               </ul>
               <ul className="sidebar-body-menu">
                 <li>
-                  
                   <Link to="/books">
                     <span className="icon edit" aria-hidden="true" />
                     Books
                   </Link>
-                  
                 </li>
                 <li>
-                 
                   <Link to="/videos">
                     <span className="icon setting" aria-hidden="true" />
                     Videos
                   </Link>
-                  
                 </li>
               </ul>
             </div>
@@ -178,72 +188,47 @@ const dashboardui = () => {
                     aria-hidden="true"
                   />
                 </button>
-                <div className="notification-wrapper">
-                  <button
-                    className="gray-circle-btn dropdown-btn"
-                    title="To messages"
-                    type="button"
-                  >
-                    <span className="sr-only">To messages</span>
-                    <span
-                      className="icon notification active"
-                      aria-hidden="true"
-                    />
-                  </button>
-                  <ul className="users-item-dropdown notification-dropdown dropdown">
-                    <li>
-                      <a href="##">
-                        <div className="notification-dropdown-icon info">
-                          <i data-feather="check" />
-                        </div>
-                        <div className="notification-dropdown-text">
-                          <span className="notification-dropdown__title">
-                            System just updated
-                          </span>
-                          <span className="notification-dropdown__subtitle">
-                            The system has been successfully upgraded. Read more
-                            here.
-                          </span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="##">
-                        <div className="notification-dropdown-icon danger">
-                          <i data-feather="info" aria-hidden="true" />
-                        </div>
-                        <div className="notification-dropdown-text">
-                          <span className="notification-dropdown__title">
-                            The cache is full!
-                          </span>
-                          <span className="notification-dropdown__subtitle">
-                            Unnecessary caches take up a lot of memory space and
-                            interfere ...
-                          </span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="##">
-                        <div className="notification-dropdown-icon info">
-                          <i data-feather="check" aria-hidden="true" />
-                        </div>
-                        <div className="notification-dropdown-text">
-                          <span className="notification-dropdown__title">
-                            New Subscriber here!
-                          </span>
-                          <span className="notification-dropdown__subtitle">
-                            A new subscriber has subscribed.
-                          </span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a className="link-to-page" href="##">
-                        Go to Notifications page
-                      </a>
-                    </li>
-                  </ul>
+                <div className="notification center">
+                  <input type="checkbox" name="" id="" />
+                  <div className="num number center">4</div>
+                  <div className="box">
+                    <div className="heading center">
+                      <p>
+                        <i className="fas fa-bell"></i>
+                        <span className="number">4</span>Notifications
+                      </p>
+                    </div>
+
+                    <div className="notification-box">
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                      <p>
+                        <i className="fas fa-user"></i>Incoming Notification
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div className="nav-user-wrapper">
                   <button
@@ -294,31 +279,59 @@ const dashboardui = () => {
           <main className="main users chart-page" id="skip-target">
             <div className="container">
               <h2 className="main-title">Videos</h2>
-              <br/>
+              <br />
               <div className="row stat-cards">
-                <div className="btn-container">
+                {/* <div className="btn-container">
                     <button className="action-btn">All Videos</button>
                     <button className="action-btn">Add Video</button>
                     <button className="action-btn">Delete Video</button>
-                  </div>
+                  </div> */}
                 <div className="user-container">
-                  
-                  <div className="user-container-form">
+                  <Button onClick={handleOpen}>Upload Video</Button>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style}>
+                      <Typography
+                        id="modal-modal-title"
+                        variant="h6"
+                        component="h2"
+                      >
+                        Video is going to be Uploaded
+                      </Typography>
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <label>
+                          <b>Image</b>
+                        </label>
+                        <input
+                          type="file"
+                          name="myImage"
+                          className="form-control"
+                          placeholder="Image"
+                        />
+                        <div className="user-button-field">
+                    <button className="user-button">Upload Video</button>
+                  </div>
+                      </Typography>
+                    </Box>
+                  </Modal>
+                 
+                  {/* <div className="user-container-form">
                     <input type="text" placeholder=" Author First name" />
                     <input type="text" placeholder="Author Last name" />
                     <input type="text" placeholder="Author Email" />
                     <input type="text" placeholder="Blog Title" />
                     <div />
-                    {/* <div className="picture-container">
-                      
-                    </div> */}
                     <div className="text-area">
                       <textarea className="description"></textarea>
                     </div>
                     <div className="user-button-field">
                       <button className="user-button">Post Blog</button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -357,4 +370,4 @@ const dashboardui = () => {
   );
 };
 
-export default dashboardui;
+export default Dashboardui;
