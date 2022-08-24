@@ -4,6 +4,17 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Link } from "react-router-dom";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
+import ModeEditSharpIcon from "@mui/icons-material/ModeEditSharp";
 
 const style = {
   position: "absolute",
@@ -21,6 +32,203 @@ const Dashboardui = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  function createData(name, calories, fat, carbs, protein) {
+    return { name, calories, fat, carbs, protein };
+  }
+
+  const rows = [
+    createData(
+      "Video Thumbnul",
+      "Video Title",
+      "Video Description",
+      "Video path",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Video Thumbnul",
+      "Video Title",
+      "Video Description",
+      "Video path",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Video Thumbnul",
+      "Video Title",
+      "Video Description",
+      "Video path",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Video Thumbnul",
+      "Video Title",
+      "Video Description",
+      "Video path",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Video Thumbnul",
+      "Video Title",
+      "Video Description",
+      "Video path",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+  ];
+
+
+
 
   return (
     <>
@@ -281,11 +489,7 @@ const Dashboardui = () => {
               <h2 className="main-title">Videos</h2>
               <br />
               <div className="row stat-cards">
-                {/* <div className="btn-container">
-                    <button className="action-btn">All Videos</button>
-                    <button className="action-btn">Add Video</button>
-                    <button className="action-btn">Delete Video</button>
-                  </div> */}
+               
                 <div className="user-container">
                   <Button onClick={handleOpen}>Upload Video</Button>
                   <Modal
@@ -303,8 +507,26 @@ const Dashboardui = () => {
                         Video is going to be Uploaded
                       </Typography>
                       <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                      <label>
+                          <b>Video title</b>
+                        </label>
+                        <input
+                          type="text"
+                          name="title"
+                          className="form-control border"
+                          placeholder="Video Title"
+                        />
                         <label>
-                          <b>Image</b>
+                          <b>Video Description</b>
+                        </label>
+                        <input
+                          type="text"
+                          name="video"
+                          className="form-control border"
+                          placeholder="Video Description"
+                        />
+                        <label>
+                          <b>Video path</b>
                         </label>
                         <input
                           type="file"
@@ -318,20 +540,47 @@ const Dashboardui = () => {
                       </Typography>
                     </Box>
                   </Modal>
-                 
-                  {/* <div className="user-container-form">
-                    <input type="text" placeholder=" Author First name" />
-                    <input type="text" placeholder="Author Last name" />
-                    <input type="text" placeholder="Author Email" />
-                    <input type="text" placeholder="Blog Title" />
-                    <div />
-                    <div className="text-area">
-                      <textarea className="description"></textarea>
-                    </div>
-                    <div className="user-button-field">
-                      <button className="user-button">Post Blog</button>
-                    </div>
-                  </div> */}
+                  <br />
+                  <br />
+                  <TableContainer
+                    component={Paper}
+                    style={{ marginLeft: "20%" }}
+                  >
+                    <Table
+                      // sx={{ minWidth: 650 }}
+                      // size="small"
+                      // aria-label="a dense table"
+                    >
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Video Thumbnul</TableCell>
+                          <TableCell align="right">Video title</TableCell>
+                          <TableCell align="right">Video description</TableCell>
+                          <TableCell align="right">Video path</TableCell>
+                          <TableCell align="right"></TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows.map((row) => (
+                          <TableRow
+                            key={row.name}
+                            sx={{
+                              "&:last-child td, &:last-child th": { border: 0 },
+                            }}
+                          >
+                            <TableCell component="th" scope="row">
+                              {row.name}
+                            </TableCell>
+                            <TableCell align="right">{row.calories}</TableCell>
+                            <TableCell align="right">{row.fat}</TableCell>
+                            <TableCell align="right">{row.carbs}</TableCell>
+                            <TableCell align="right">{row.protein}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                
                 </div>
               </div>
             </div>

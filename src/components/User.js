@@ -1,11 +1,20 @@
-// import { LogoDev } from "@mui/icons-material";
 import { React, useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Link } from "react-router-dom";
-
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
+import ModeEditSharpIcon from "@mui/icons-material/ModeEditSharp";
 
 
 const style = {
@@ -20,12 +29,408 @@ const style = {
   p: 4,
 };
 
+
 const Dashboardui = () => {
 
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+
+  function createData(name, calories, fat, carbs, protein,others) {
+    return { name, calories, fat, carbs, protein,others };
+  }
+
+  const rows = [
+    createData(
+      "First Name",
+      "Last Name",
+      "Email",
+      "Sex",
+      // "Phone number",
+      
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "First Name",
+      "Last Name",
+      "Email",
+      "Sex",
+      // "Phone number",
+   
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "First Name",
+      "Last Name",
+      "Email",
+      "Sex",
+      // "Phone number",
+     
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "First Name",
+      "Last Name",
+      "Email",
+      "Sex",
+      // "Phone number",
+    
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "First Name",
+      "Last Name",
+      "Email",
+      "Sex",
+      // "Phone number",
+     
+      <Stack
+      
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+  ];
 
   return (
     <>
@@ -285,13 +690,6 @@ const Dashboardui = () => {
             <div className="container">
               <h2 className="main-title">Users</h2>
               <div className="row stat-cards">
-                {/* <div className="btn-container">
-                  <button className="action-btn">All Users</button>
-                  <button className="action-btn">New User</button>
-                  <button className="action-btn">Edit User</button>
-                  <button className="action-btn">Delete User</button>
-                </div> */}
-
                 <div  className="user-container">
 
                 <Button onClick={handleOpen}>New User</Button>
@@ -317,7 +715,7 @@ const Dashboardui = () => {
                           </label>
                           <input
                             type="text"
-                            className="form-control"
+                            className="form-control border"
                             placeholder=" First name"
                             name="fname"
                           />
@@ -326,7 +724,7 @@ const Dashboardui = () => {
                           </label>
                           <input
                             type="text"
-                            className="form-control"
+                            className="form-control border"
                             placeholder=" Last name"
                             name="lname"
                           />
@@ -335,20 +733,32 @@ const Dashboardui = () => {
                           </label>
                           <input
                             type="email"
-                            className="form-control"
+                            className="form-control border"
                             placeholder=" Email"
                             name="email"
                           />
+                          <br />
                           <label>
-                            <b>Content</b>
+                            <b>Sex</b>
                           </label>
                           <br />
-                          <textarea
-                            className="form-control"
-                            placeholder="Content"
-                            name="Content"
-                          ></textarea>
+                          <input
+                            type="Sex"
+                            className="form-control border"
+                            placeholder=" Sex"
+                            name="sex"
+                          />
+                           <br />
+                          {/* <label>
+                            <b>Phone number</b>
+                          </label>
                           <br />
+                          <input
+                            type="number"
+                            className="form-control border"
+                            placeholder=" Phone number"
+                            name="number"
+                          />
                           <label>
                             <b>Image</b>
                           </label>
@@ -357,7 +767,7 @@ const Dashboardui = () => {
                             name="myImage"
                             className="form-control"
                             placeholder="Image"
-                          />
+                          /> */}
                           <div className="user-button-field">
                             <button className="user-button">New User</button>
                           </div>
@@ -365,20 +775,51 @@ const Dashboardui = () => {
                       </Typography>
                     </Box>
                   </Modal>
-                  
-                  {/* <div className="user-container-form">
-                    <input type="text" placeholder="First name" />
-                    <input type="text" placeholder="Last name name" />
-                    <input type="text" placeholder="Kind of Health problem" />
-                    <div />
-                    <div className="dropdown"></div>
-                    <div className="picture-container">
-                      <img src={LogoDev} alt="Photo" />
-                    </div>
-                    <div className="user-button-field">
-                      <button className="user-button">Add User</button>
-                    </div> */}
                   </div>
+                  <br />
+                  <br />
+                  <TableContainer
+                    component={Paper}
+                    // style={{backgroundColor:'green'}}
+                    // style={{ marginLeft: "20%",marginTop:'20%' }}
+                  >
+                    <Table
+                      // sx={{ minWidth: 650 }}
+                      // size="small"
+                      // aria-label="a dense table"
+                    >
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>First name</TableCell>
+                          <TableCell align="right">Last name</TableCell>
+                          <TableCell align="right">Email</TableCell>
+                          <TableCell align="right"> Sex</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows.map((row) => (
+                          <TableRow
+                            key={row.name}
+                            sx={{
+                              "&:last-child td, &:last-child th": { border: 0 },
+                            }}
+                          >
+                            <TableCell component="th" scope="row">
+                              {row.name}
+                            </TableCell>
+                            <TableCell align="right">{row.calories}</TableCell>
+                            <TableCell align="right">{row.fat}</TableCell>
+                            <TableCell align="right">{row.carbs}</TableCell>
+                            <TableCell align="right">{row.protein}</TableCell>
+                            
+
+
+
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
               
               </div>
             </div>

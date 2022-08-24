@@ -1,7 +1,243 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { React, useState } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
+import ModeEditSharpIcon from "@mui/icons-material/ModeEditSharp";
 
-const dashboardui = () => {
+
+
+const style = {
+  position: "absolute",
+  top: "40%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  // border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
+
+const Dashboardui = () => {
+
+
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  function createData(name, calories, fat, carbs, protein) {
+    return { name, calories, fat, carbs, protein };
+  }
+
+  const rows = [
+    createData(
+      "Book photo",
+      "Book Title",
+      "Book Description",
+      "Book Link",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Book photo",
+      "Book Title",
+      "Book Description",
+      "Book Link",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Book photo",
+      "Book Title",
+      "Book Description",
+      "Book Link",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Book photo",
+      "Book Title",
+      "Book Description",
+      "Book Link",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Book photo",
+      "Book Title",
+      "Book Description",
+      "Book Link",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+  ];
+
+
+
+
+
+
   return (
     <>
       <div className="layer" />
@@ -271,29 +507,111 @@ const dashboardui = () => {
               <h2 className="main-title">Books</h2>
               <br/>
               <div className="row stat-cards">
-                {/* <div className="btn-container">
-                    <button className="action-btn">All Books</button>
-                    <button className="action-btn">Add Book</button>
-                    <button className="action-btn">Delete Book</button>
-                  </div> */}
                 <div className="user-container">
-                  
-                  <div className="user-container-form">
-                    <input type="text" placeholder=" Author First name" />
-                    <input type="text" placeholder="Author Last name" />
-                    <input type="text" placeholder="Author Email" />
-                    <input type="text" placeholder="Blog Title" />
-                    <div />
-                    {/* <div className="picture-container">
-                      
-                    </div> */}
-                    <div className="text-area">
-                      <textarea className="description"></textarea>
-                    </div>
-                    <div className="user-button-field">
-                      <button className="user-button">Post Blog</button>
-                    </div>
+
+                <Button onClick={handleOpen}>Upload Book</Button>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style}>
+                      <Typography
+                        id="modal-modal-title"
+                        variant="h6"
+                        component="h2"
+                      >
+                        Book is going to be Uploaded
+                      </Typography>
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                      <label>
+                          <b>Book title</b>
+                        </label>
+                        <input
+                          type="text"
+                          name="title"
+                          className="form-control border"
+                          placeholder="Book Title"
+                        />
+                        <label>
+                          <b>Book Description</b>
+                        </label>
+                        <input
+                          type="text"
+                          name="video"
+                          className="form-control border"
+                          placeholder="Book Description"
+                        />
+                        <label>
+                          <b>Book photo</b>
+                        </label>
+                        <input
+                          type="file"
+                          name="myImage"
+                          className="form-control"
+                          placeholder="Image"
+                        />
+                        <label>
+                          <b>Book Thumbnul</b>
+                        </label>
+                        <input
+                          type="file"
+                          name="myImage"
+                          className="form-control"
+                          placeholder="Image"
+                        />
+                        <div className="user-button-field">
+                    <button className="user-button">Upload Book</button>
                   </div>
+                      </Typography>
+                    </Box>
+                  </Modal>
+                  
+
+
+
+                <br />
+                  <br />
+                  <TableContainer
+                    component={Paper}
+                    style={{ marginLeft: "20%" }}
+                  >
+                    <Table
+                      // sx={{ minWidth: 650 }}
+                      // size="small"
+                      // aria-label="a dense table"
+                    >
+                      <TableHead>
+                        <TableRow>
+                          <TableCell><h><b>Book Thumbnul</b></h></TableCell>
+                          <TableCell align="right"><h><b>Book title</b></h></TableCell>
+                          <TableCell align="right"><h><b>Book description</b></h></TableCell>
+                          <TableCell align="right"><h><b>Book link</b></h></TableCell>
+                          <TableCell align="right"></TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows.map((row) => (
+                          <TableRow
+                            key={row.name}
+                            sx={{
+                              "&:last-child td, &:last-child th": { border: 0 },
+                            }}
+                          >
+                            <TableCell component="th" scope="row">
+                              {row.name}
+                            </TableCell>
+                            <TableCell align="right">{row.calories}</TableCell>
+                            <TableCell align="right">{row.fat}</TableCell>
+                            <TableCell align="right">{row.carbs}</TableCell>
+                            <TableCell align="right">{row.protein}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                 
                 </div>
               </div>
             </div>
@@ -332,4 +650,4 @@ const dashboardui = () => {
   );
 };
 
-export default dashboardui;
+export default Dashboardui;

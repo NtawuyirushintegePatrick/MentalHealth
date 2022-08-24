@@ -10,12 +10,11 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import DeleteIcon from '@mui/icons-material/Delete';
-import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
-
+import DeleteIcon from "@mui/icons-material/Delete";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
+import ModeEditSharpIcon from "@mui/icons-material/ModeEditSharp";
 import { Link } from "react-router-dom";
-import { EditNotifications } from "@mui/icons-material";
 
 const style = {
   position: "absolute",
@@ -30,8 +29,6 @@ const style = {
 };
 
 const Dashboardui = () => {
-  // const [selectedImage, setSelectedImage] = useState("");
-
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -41,28 +38,381 @@ const Dashboardui = () => {
   }
 
   const rows = [
-    createData("Image1", 'Blog Title1', 'Content1', 'Time1', 
-     <Stack direction="row" alignItems="center" spacing={1} style={{background:'white'}}>
-    {/* <IconButton aria-label="delete" size="small">
-      <DeleteIcon fontSize="inherit" />
-    </IconButton> */}
-    <IconButton aria-label="delete" size="small" style={{Left:'50px',color:'red'}}>
-      <DeleteIcon fontSize="small" />
-    </IconButton>
-    <IconButton aria-label="edit" size="small" style={{Left:'50px'}}>
-      <EditNotifications fontSize="small" />
-    </IconButton>
-    {/* <IconButton aria-label="delete" size="large">
-      <DeleteIcon />
-    </IconButton>
-    <IconButton aria-label="delete" size="large">
-      <DeleteIcon fontSize="inherit" />
-    </IconButton> */}
-  </Stack>),
-    createData("Image2", 'Blog Title1', 'Content1', 'Time1', 'Actions1'),
-    createData("Image3", 'Blog Title1', 'Content1', 'Time1', 'Actions1'),
-    createData("Image4", 'Blog Title1', 'Content1', 'Time1', 'Actions1'),
-    createData("Image5", 'Blog Title1', 'Content1', 'Time1', 'Actions1'),
+    createData(
+      "Image1",
+      "Blog Title1",
+      "Content1",
+      "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Image2",
+      "Blog Title1",
+      "Content1",
+      "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Image3",
+      "Blog Title1",
+      "Content1",
+      "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Image4",
+      "Blog Title1",
+      "Content1",
+      "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Image5",
+      "Blog Title1",
+      "Content1",
+      "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          {/* <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <h>New blog being Edited</h>
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <div className="user-container-form">
+                  <label>
+                    <b>Title:</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder=" Title"
+                    name="title"
+                  />
+                  <label>
+                    <b>Content</b>
+                  </label>
+                  <br />
+                  <textarea
+                    className="form-control"
+                    placeholder="Content"
+                    name="Content"
+                  ></textarea>
+                  <br />
+                  <label>
+                    <b>Image</b>
+                  </label>
+                  <input
+                    type="file"
+                    name="myImage"
+                    className="form-control"
+                    placeholder="Image"
+                  />
+                  <div className="user-button-field">
+                    <button className="user-button">Edit Blog</button>
+                  </div>
+                </div>
+              </Typography>
+            </Box>
+          </Modal> */}
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
   ];
 
   return (
@@ -347,7 +697,7 @@ const Dashboardui = () => {
                           </label>
                           <input
                             type="text"
-                            className="form-control"
+                            className="form-control border"
                             placeholder=" Title"
                             name="title"
                           />
@@ -367,7 +717,7 @@ const Dashboardui = () => {
                           <input
                             type="file"
                             name="myImage"
-                            className="form-control"
+                            className="form-control border"
                             placeholder="Image"
                           />
                           <div className="user-button-field">
@@ -379,11 +729,14 @@ const Dashboardui = () => {
                   </Modal>
                   <br />
                   <br />
-                  <TableContainer component={Paper}>
+                  <TableContainer
+                    component={Paper}
+                    style={{ marginLeft: "20%" }}
+                  >
                     <Table
-                      sx={{ minWidth: 650 }}
-                      size="small"
-                      aria-label="a dense table"
+                      // sx={{ minWidth: 650 }}
+                      // size="small"
+                      // aria-label="a dense table"
                     >
                       <TableHead>
                         <TableRow>
@@ -391,7 +744,7 @@ const Dashboardui = () => {
                           <TableCell align="right">Title</TableCell>
                           <TableCell align="right">Content</TableCell>
                           <TableCell align="right">Time</TableCell>
-                          <TableCell align="right">Action</TableCell>
+                          <TableCell align="right"></TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -414,45 +767,6 @@ const Dashboardui = () => {
                       </TableBody>
                     </Table>
                   </TableContainer>
-
-                  {/* <Button onClick={handleOpen}>update Blog</Button>
-                  <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                  >
-                    <Box sx={style}>
-                      <Typography
-                        id="modal-modal-title"
-                        variant="h6"
-                        component="h2"
-                      >
-                        Text in a modal
-                      </Typography>
-                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor
-                        ligula.
-                      </Typography>
-                    </Box>
-                  </Modal> */}
-
-                  {/* <div className="user-container-form">
-                    <label><b>Title:</b></label>
-                    <input type="text" className="form-control" placeholder=" Title" name="title"/>
-                    <label><b>Content</b></label><br/>
-                    <textarea className="form-control" placeholder="Content" name="Content"></textarea><br/>
-                    <label><b>Image</b></label>
-                    <input 
-                    type="file" 
-                    name="myImage"  
-                    className="form-control"
-                    placeholder="Image" 
-                    />
-                    <div className="user-button-field">
-                      <button className="user-button">Post Blog</button>
-                    </div>
-                  </div> */}
                 </div>
                 {/* <div className="row">
                   <div className="col-lg-9">

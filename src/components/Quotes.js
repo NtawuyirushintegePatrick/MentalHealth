@@ -1,7 +1,185 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { React, useState } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
+import ModeEditSharpIcon from "@mui/icons-material/ModeEditSharp";
 
-const dashboardui = () => {
+const style = {
+  position: "absolute",
+  top: "40%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  // border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
+const Dashboardui = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  function createData(name, calories, fat, carbs, protein) {
+    return { name, calories, fat, carbs, protein };
+  }
+
+  const rows = [
+    createData(
+      "Qoute",
+      "Qoute author",
+      // "article description",
+      // "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Qoute",
+      "Qoute author",
+      // "article description",
+      // "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Qoute",
+      "Qoute author",
+      // "article description",
+      // "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Qoute",
+      "Qoute author",
+      // "article description",
+      // "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+    createData(
+      "Qoute",
+      "Qoute author",
+      // "article description",
+      // "Time1",
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        style={{ background: "white" }}
+      >
+        <IconButton
+          aria-label="delete"
+          size="small"
+          style={{ Left: "50px", color: "red" }}
+        >
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton
+          aria-label="edit"
+          onClick={handleOpen}
+          size="small"
+          style={{ Left: "50px" }}
+        >
+          <ModeEditSharpIcon fontSize="small" />
+        </IconButton>
+      </Stack>
+    ),
+  ];
+
   return (
     <>
       <div className="layer" />
@@ -40,7 +218,6 @@ const dashboardui = () => {
                   </Link>
                 </li>
                 <li>
-          
                   <Link className="show-cat-btn" to="/Blog">
                     <span className="icon document" aria-hidden="true" />
                     Blogs
@@ -52,47 +229,38 @@ const dashboardui = () => {
                       <span className="icon arrow-down" aria-hidden="true" />
                     </span>
                   </Link>
-              
                 </li>
-                
+
                 <Link className="show-cat-btn" to="/user">
                   <span className="icon image" aria-hidden="true" />
                   Users
                 </Link>
-                
+
                 <li>
-               
                   <Link className="show-cat-btn" to="/articles">
                     <span className="icon paper" aria-hidden="true" />
                     Articles
                   </Link>
-                 
                 </li>
                 <li>
-                  
                   <Link to="/quotes">
                     <span className="icon message" aria-hidden="true" />
                     Quotes
                   </Link>
-                  
                 </li>
               </ul>
               <ul className="sidebar-body-menu">
                 <li>
-                  
                   <Link to="/books">
                     <span className="icon edit" aria-hidden="true" />
                     Books
                   </Link>
-                  
                 </li>
                 <li>
-                 
                   <Link to="/videos">
                     <span className="icon setting" aria-hidden="true" />
                     Videos
                   </Link>
-                  
                 </li>
               </ul>
             </div>
@@ -269,32 +437,92 @@ const dashboardui = () => {
           <main className="main users chart-page" id="skip-target">
             <div className="container">
               <h2 className="main-title">Quotes</h2>
-              <br/>
+              <br />
               <div className="row stat-cards">
-                <div className="btn-container">
-                    <button className="action-btn">All Quotes</button>
-                    <button className="action-btn">New Quote</button>
-                    <button className="action-btn">Edit Quote</button>
-                    <button className="action-btn">Delete Quote</button>
-                  </div>
                 <div className="user-container">
-                  
-                  <div className="user-container-form">
-                    <input type="text" placeholder=" Author First name" />
-                    <input type="text" placeholder="Author Last name" />
-                    <input type="text" placeholder="Author Email" />
-                    <input type="text" placeholder="Blog Title" />
-                    <div />
-                    {/* <div className="picture-container">
-                      
-                    </div> */}
-                    <div className="text-area">
-                      <textarea className="description"></textarea>
-                    </div>
-                    <div className="user-button-field">
-                      <button className="user-button">Post Blog</button>
-                    </div>
-                  </div>
+                  <Button onClick={handleOpen}>Create Quotes</Button>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style}>
+                      <Typography
+                        id="modal-modal-title"
+                        variant="h6"
+                        component="h2"
+                      >
+                        <h>New quote is being created</h>
+                      </Typography>
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <div className="user-container-form">
+                          <label>
+                            <b>Quote </b>
+                          </label>
+                          <input
+                            type="text"
+                            className="form-control border"
+                            placeholder=" Qoute "
+                            name="qoute-title"
+                          />
+                          <label>
+                            <b>Qoute Author</b>
+                          </label>
+                          <br />
+                          <input
+                            type="text"
+                            className="form-control border"
+                            placeholder="author"
+                            name="Qoute"
+                          />
+                          <br />
+                          <div className="user-button-field">
+                            <button className="user-button">Post Qoute</button>
+                          </div>
+                        </div>
+                      </Typography>
+                    </Box>
+                  </Modal>
+                  <br />
+                  <br />
+                  <TableContainer
+                    component={Paper}
+                    style={{ marginLeft: "20%" }}
+                  >
+                    <Table
+                    // sx={{ minWidth: 650 }}
+                    // size="small"
+                    // aria-label="a dense table"
+                    >
+                      <TableHead>
+                        <TableRow>
+                          <TableCell><h><b>Qoute</b></h></TableCell>
+                          <TableCell align="right"><h><b>Qoute author</b></h></TableCell>
+                          {/* <TableCell align="right">Article description</TableCell> */}
+                          {/* <TableCell align="right">Time</TableCell> */}
+                          <TableCell align="right"></TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {rows.map((row) => (
+                          <TableRow
+                            key={row.name}
+                            sx={{
+                              "&:last-child td, &:last-child th": { border: 0 },
+                            }}
+                          >
+                            <TableCell component="th" scope="row">
+                              {row.name}
+                            </TableCell>
+                            <TableCell align="right">{row.calories}</TableCell>
+                            <TableCell align="right">{row.fat}</TableCell>
+                            <TableCell align="right">{row.carbs}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
                 </div>
               </div>
             </div>
@@ -333,4 +561,4 @@ const dashboardui = () => {
   );
 };
 
-export default dashboardui;
+export default Dashboardui;
