@@ -498,9 +498,8 @@ const Dashboardui = () => {
                       <TableHead>
                         <TableRow>
                           <TableCell><h><b>Qoute</b></h></TableCell>
-                          <TableCell align="right"><h><b>Qoute author</b></h></TableCell>
-                          {/* <TableCell align="right">Article description</TableCell> */}
-                          {/* <TableCell align="right">Time</TableCell> */}
+                          <TableCell align="right">Quote author</TableCell>
+                          {/* <TableCell align="right">Qoute owner</TableCell> */}
                           <TableCell align="right"></TableCell>
                         </TableRow>
                       </TableHead>
@@ -518,6 +517,7 @@ const Dashboardui = () => {
                             <TableCell align="right">{row.calories}</TableCell>
                             <TableCell align="right">{row.fat}</TableCell>
                             <TableCell align="right">{row.carbs}</TableCell>
+                            
                           </TableRow>
                         ))}
                       </TableBody>

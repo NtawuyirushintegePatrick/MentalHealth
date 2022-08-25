@@ -198,7 +198,7 @@ const Home = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Service one</a>
+                  <a href="services.html">Article one</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
@@ -217,7 +217,7 @@ const Home = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Service two</a>
+                  <a href="services.html">Article two</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
@@ -236,7 +236,7 @@ const Home = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Service three</a>
+                  <a href="services.html">Article three</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
@@ -320,7 +320,7 @@ const Home = () => {
         <div className="row justify-content-center">
           <div className="col-lg-7 col-md-9 col-sm-10">
             <div className="section-tittle text-center mb-100">
-              <h2>Latest Blog</h2>
+              <h2>Blogs</h2>
             </div>
           </div>
         </div>
@@ -368,6 +368,76 @@ const Home = () => {
               <div className="blog-img-cap">
                 <div className="blog-img">
                   <img src="assets/img/gallery/blog3.png" alt="" />
+                </div>
+                <div className="blog-cap">
+                  <h3>
+                    <a href="blog_details.html">Everyday diet plan</a>
+                  </h3>
+                  <p>
+                    Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
+                    dignissim dolor, a pretium mi sem ut ipsum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="home-blog-area section-padding30" id='blogs'>
+      <div className="container">
+        {/* Section Tittle */}
+        <div className="row justify-content-center">
+          <div className="col-lg-7 col-md-9 col-sm-10">
+            <div className="section-tittle text-center mb-100">
+              <h2>Quotes</h2>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-lg-4 col-md-6">
+            <div className="home-blog-single mb-40">
+              <div className="blog-img-cap">
+                <div className="blog-img">
+                  <img src="assets/img/gallery/quote3.jpeg" alt="" />
+                </div>
+                <div className="blog-cap">
+                  <h3>
+                    <a href="blog_details.html">Your daily meal plan</a>
+                  </h3>
+                  <p>
+                    Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
+                    dignissim dolor, a pretium mi sem ut ipsum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className="home-blog-single mb-40">
+              <div className="blog-img-cap">
+                <div className="blog-img">
+                  <img src="assets/img/gallery/quote2.jpg" alt="" />
+                </div>
+                <div className="blog-cap">
+                  <h3>
+                    <a href="blog_details.html">
+                      Food is a great source of medicine
+                    </a>
+                  </h3>
+                  <p>
+                    Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
+                    dignissim dolor, a pretium mi sem ut ipsum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className="home-blog-single mb-40">
+              <div className="blog-img-cap">
+                <div className="blog-img">
+                <img src="assets/img/gallery/quote3.jpeg" alt="" />
                 </div>
                 <div className="blog-cap">
                   <h3>

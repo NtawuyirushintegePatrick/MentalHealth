@@ -717,7 +717,7 @@ const Dashboardui = () => {
                           <input
                             type="file"
                             name="myImage"
-                            className="form-control border"
+                            className="form-control"
                             placeholder="Image"
                           />
                           <div className="user-button-field">
