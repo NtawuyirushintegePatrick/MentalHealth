@@ -403,7 +403,7 @@ const Dashboardui = () => {
               <div className="row">
                 <div className="col-lg-9">
                   <div className="chart">
-                    fhbffffffffffffffffffffffffffffffffffffffff
+                    fhb
 
                     {/* <CChart
                       type="doughnut"
