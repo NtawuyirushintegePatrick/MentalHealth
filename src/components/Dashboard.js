@@ -2,9 +2,10 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 import { Link } from "react-router-dom";
+import { CChart } from "@coreui/react-chartjs";
 
 const Dashboardui = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -250,13 +251,12 @@ const Dashboardui = () => {
                 <div className="nav-user-wrapper">
                   <Button
                     id="demo-positioned-button"
-                    
                     aria-controls={open ? "demo-positioned-menu" : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? "true" : undefined}
                     onClick={handleClick}
                   >
-                    <AccountCircleOutlinedIcon/>
+                    <AccountCircleOutlinedIcon />
                   </Button>
                   <Menu
                     id="demo-positioned-menu"
@@ -370,7 +370,7 @@ const Dashboardui = () => {
                     </div>
                     <div className="stat-cards-info">
                       <p className="stat-cards-info__num">1478 286</p>
-                      <p className="stat-cards-info__title">Total Therapist</p>
+                      <p className="stat-cards-info__title">Total Articles</p>
                       <p className="stat-cards-info__progress">
                         <span className="stat-cards-info__profit danger">
                           <i data-feather="trending-down" aria-hidden="true" />
@@ -388,7 +388,7 @@ const Dashboardui = () => {
                     </div>
                     <div className="stat-cards-info">
                       <p className="stat-cards-info__num">1478 286</p>
-                      <p className="stat-cards-info__title">Total Patients</p>
+                      <p className="stat-cards-info__title">Total Quotes</p>
                       <p className="stat-cards-info__progress">
                         <span className="stat-cards-info__profit warning">
                           <i data-feather="trending-up" aria-hidden="true" />
@@ -403,9 +403,28 @@ const Dashboardui = () => {
               <div className="row">
                 <div className="col-lg-9">
                   <div className="chart">
-                    {/* <canvas id="myChart" aria-label="Site statistics" role="img" /> */}
+                    fhbffffffffffffffffffffffffffffffffffffffff
+
+                    {/* <CChart
+                      type="doughnut"
+                      data={{
+                        labels: ["VueJs", "EmberJs", "ReactJs", "AngularJs"],
+                        datasets: [
+                          {
+                            backgroundColor: [
+                              "#41B883",
+                              "#E46651",
+                              "#00D8FF",
+                              "#DD1B16",
+                            ],
+                            data: [40, 20, 80, 10],
+                          },
+                        ],
+                      }}
+                    /> */}
+                    
                   </div>
-                  <div className="users-table table-wrapper">
+                  {/* <div className="users-table table-wrapper">
                     <table className="posts-table">
                       <thead>
                         <tr className="users-table-info">
@@ -678,7 +697,7 @@ const Dashboardui = () => {
                         </tr>
                       </tbody>
                     </table>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="col-lg-3">
                   <article className="customers-wrapper">
@@ -688,7 +707,7 @@ const Dashboardui = () => {
                       role="img"
                     />
                   </article>
-                  <article className="white-block">
+                  {/* <article className="white-block">
                     <div className="top-cat-title">
                       <h3>Top categories</h3>
                       <p>28 Categories, 1400 Posts</p>
@@ -781,7 +800,7 @@ const Dashboardui = () => {
                         </a>
                       </li>
                     </ul>
-                  </article>
+                  </article> */}
                 </div>
               </div>
             </div>
