@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Signup = () => {
   const [Names, setNames] = useState("");
   const [Email, setEmail] = useState("");
-  const [Role, setRole] = useState("");
+  const [Role, setRole] = useState("2");
   const [Gender, setGender] = useState("");
   const [Phone, setPhone] = useState("");
   const [Password, setPassword] = useState("");
@@ -104,7 +104,7 @@ const Signup = () => {
                 required=""
               />
             </label>
-            <label className="form-label-wrapper">
+            {/* <label className="form-label-wrapper">
               <p className="form-label">Role</p>
               <input
                 className="form-input"
@@ -116,7 +116,7 @@ const Signup = () => {
                 placeholder="Enter your role"
                 required=""
               />
-            </label>
+            </label> */}
 
             <label className="form-label-wrapper">
               <p className="form-label">Gender</p>

@@ -531,7 +531,7 @@ const Dashboardui = () => {
               <div className="row stat-cards">
                
                 <div className="user-container">
-                  <Button onClick={handleOpen}>Upload Video</Button>
+                  <Button className="border"   onClick={handleOpen}>Upload Video</Button>
                   <Modal
                     open={open}
                     onClose={handleClose}

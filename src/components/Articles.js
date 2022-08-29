@@ -721,7 +721,7 @@ const Dashboardui = () => {
           <h2 className="main-title">Articles</h2>
           <div className="row stat-cards">
           <div className="user-container">
-                  <Button onClick={handleOpen}>Create Article</Button>
+                  <Button className="border"  onClick={handleOpen}>Create Article</Button>
                   <Modal
                     open={open}
                     onClose={handleClose}

@@ -715,18 +715,19 @@ const Dashboardui = () => {
               <br />
               <div className="row stat-cards">
                 <div className="user-container">
-                  <Button onClick={handleOpen}>Create blog</Button>
+                  <Button className="border" onClick={handleOpen}>Create blog</Button>
                   <Modal
                     open={open}
                     onClose={handleClose}
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                   >
-                    <Box sx={style}>
+                    <Box sx={style} >
                       <Typography
                         id="modal-modal-title"
                         variant="h6"
                         component="h2"
+
                       >
                         <h>New blog being created</h>
                       </Typography>
@@ -771,12 +772,12 @@ const Dashboardui = () => {
                   <br />
                   <TableContainer
                     component={Paper}
-                    style={{ marginLeft: "20%" }}
+                    style={{ marginLeft: "20%"}}
                   >
                     <Table
-                      // sx={{ minWidth: 650 }}
-                      // size="small"
-                      // aria-label="a dense table"
+                      sx={{ minWidth: 650 }}
+                      size="large"
+                      aria-label="a dense table"
                     >
                       <TableHead>
                         <TableRow>

@@ -1,4 +1,4 @@
-import React from "react";
+import {React,useEffect, useState }from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -9,6 +9,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import Chart from 'chart.js/auto';
 
 import { Link } from "react-router-dom";
 // import { CChart } from "@coreui/react-chartjs";
@@ -64,9 +65,18 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 
 
+
+
+
 const Dashboardui = () => {
+
+
+
+
+
+
   
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -466,8 +476,9 @@ const Dashboardui = () => {
               <div className="row">
                 <div className="col-lg-9">
                   <div className="chart">
-                    fhb
+                    
 
+             
                     {/* <CChart
                       type="doughnut"
                       data={{

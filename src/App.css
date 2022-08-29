@@ -82,7 +82,7 @@ body::-webkit-scrollbar {
   display: flex;
   margin: 10px 0px 10px 0px ;
   flex-direction: column;
-  width: 50%;
+  width: 80%;
   background: white;
   color: black;
   height: 1%;
@@ -90,14 +90,18 @@ body::-webkit-scrollbar {
 }
 .user-container-form textarea{
   font-size: medium;
-  width: 50%;
+  width: 80%;
+}
+
+.user-container-form{
+  padding-left: 15%;
 }
 
 .picture-container{
   margin: 10px 0px 0px 0px;
-  padding: 5px 5px 5px 5px;
+  /* padding: 5px 5px 5px 0px; */
   height: 20px;
-  width: 10%;
+  width: 50%;
   height: 5%;
   border-radius: 5px;
   border: transparent;
@@ -214,5 +218,6 @@ body::-webkit-scrollbar {
 .notification-box::-webkit-scrollbar-thumb:hover{
   background: #555;
 }
-
-
+/* .chart{
+  background-color:#28a745;
+} */
