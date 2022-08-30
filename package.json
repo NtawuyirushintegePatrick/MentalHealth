@@ -36,6 +36,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.4.0",
     "react-toastify": "^9.0.8",
+    "recharts": "^2.1.13",
     "sass-loader": "^13.0.2",
     "sequelize": "^6.21.4",
     "style-loader": "^3.3.1",

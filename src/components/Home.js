@@ -38,30 +38,30 @@ const Home = () => {
                   <nav>
                     <ul id="navigation">
                       <li>
-                        <a href="#">Home</a>
+                        <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <a href="#about">About</a>
+                        <Link to="/About">About</Link>
                       </li>
                       <li>
-                        <a href="#services">Services</a>
+                        <Link to="/Services">Services</Link>
                       </li>
                       <li>
                         <a href="#blogs">Blog</a>
                         <ul className="submenu">
                           <li>
-                            <a href="#blogs">Blog</a>
+                            <Link to="/Blogs">Blog</Link>
                           </li>
                           <li>
-                            <a href="#blog_details">Blog Details</a>
+                            <Link to="/BlogDetails">BlogDetails</Link>
                           </li>
                           <li>
-                            <a href="#elements">Element</a>
+                            <Link to="/Elements">Element</Link>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <a href="#contact">Contact</a>
+                        <Link to="/Contacts">Contacts</Link>
                       </li>
                     </ul>
                   </nav>

@@ -1,4 +1,4 @@
-import {React,useEffect, useState }from "react";
+import {React,useEffect, useState,PureComponent  }from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -10,6 +10,9 @@ import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Chart from 'chart.js/auto';
+
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
 
 import { Link } from "react-router-dom";
 // import { CChart } from "@coreui/react-chartjs";
@@ -63,6 +66,52 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 
+const data = [
+  {
+    name: 'Page A',
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: 'Page B',
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: 'Page C',
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: 'Page D',
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: 'Page E',
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: 'Page F',
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: 'Page G',
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
+
+
 
 
 
@@ -70,10 +119,11 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const Dashboardui = () => {
 
+  class Example extends PureComponent {
+  static demoUrl = 'https://codesandbox.io/s/simple-area-chart-4ujxw';
 
 
-
-
+  }
 
   
   const [anchorEl, setAnchorEl] = useState(null);
@@ -479,23 +529,25 @@ const Dashboardui = () => {
                     
 
              
-                    {/* <CChart
-                      type="doughnut"
-                      data={{
-                        labels: ["VueJs", "EmberJs", "ReactJs", "AngularJs"],
-                        datasets: [
-                          {
-                            backgroundColor: [
-                              "#41B883",
-                              "#E46651",
-                              "#00D8FF",
-                              "#DD1B16",
-                            ],
-                            data: [40, 20, 80, 10],
-                          },
-                        ],
-                      }}
-                    /> */}
+                  <ResponsiveContainer width="100%" height="100%">
+        <AreaChart
+          width={500}
+          height={400}
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+        </AreaChart>
+      </ResponsiveContainer>
                     
                   </div>
                   {/* <div className="users-table table-wrapper">
@@ -774,7 +826,7 @@ const Dashboardui = () => {
                   </div> */}
                 </div>
                 <div className="col-lg-3">
-                  <article className="customers-wrapper">
+                  <article className="customers-wrapper" style={{color:'white'}}>
                     <canvas
                       id="customersChart"
                       aria-label="Customers statistics"

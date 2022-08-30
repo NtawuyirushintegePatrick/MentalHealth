@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
@@ -35,33 +36,33 @@ const About = () => {
               <div className="menu-main d-flex align-items-center justify-content-end">
                 {/* Main-menu */}
                 <div className="main-menu f-right d-none d-lg-block">
-                  <nav>
+                <nav>
                     <ul id="navigation">
                       <li>
-                        <a href="index.html">Home</a>
+                        <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <a href="about.html">About</a>
+                        <Link to="/About">About</Link>
                       </li>
                       <li>
-                        <a href="services.html">Services</a>
+                        <Link to="/Services">Services</Link>
                       </li>
                       <li>
-                        <a href="blog.html">Blog</a>
+                        <a href="#blogs">Blog</a>
                         <ul className="submenu">
                           <li>
-                            <a href="blog.html">Blog</a>
+                            <Link to="/Blogs">Blog</Link>
                           </li>
                           <li>
-                            <a href="blog_details.html">Blog Details</a>
+                            <Link to="/BlogDetails">BlogDetails</Link>
                           </li>
                           <li>
-                            <a href="elements.html">Element</a>
+                            <Link to="/Elements">Element</Link>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <a href="contact.html">Contact</a>
+                        <Link to="/Contacts">Contacts</Link>
                       </li>
                     </ul>
                   </nav>
