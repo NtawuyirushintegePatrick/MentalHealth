@@ -580,7 +580,7 @@ const Dashboardui = () => {
                         </label>
                         <input
                           type="text"
-                          name="video"
+                          name="book"
                           className="form-control border"
                           placeholder="Book Description"
                         />
@@ -590,6 +590,7 @@ const Dashboardui = () => {
                         <input
                           type="file"
                           name="myImage"
+                          accept="image/*,audio/*,video/*"
                           className="form-control"
                           placeholder="Image"
                         />
