@@ -6,7 +6,7 @@ const BlogDetails = () => {
     <>
     
     {/*? Preloader Start */}
-  <div id="preloader-active">
+  {/* <div id="preloader-active">
     <div className="preloader d-flex align-items-center justify-content-center">
       <div className="preloader-inner position-relative">
         <div className="preloader-circle" />
@@ -15,7 +15,7 @@ const BlogDetails = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
   {/* Preloader Start */}
   <header>
     {/*? Header Start */}
@@ -26,9 +26,9 @@ const BlogDetails = () => {
             {/* Logo */}
             <div className="col-xl-2 col-lg-2 col-md-1">
               <div className="logo">
-                <a href="index.html">
+                <Link to="/">
                   <img src="assets/img/logo/logo.png" alt="" />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-xl-10 col-lg-10 col-md-10">
@@ -66,11 +66,11 @@ const BlogDetails = () => {
                     </ul>
                   </nav>
                 </div>
-                <div className="header-right-btn f-right d-none d-lg-block ml-15">
+                {/* <div className="header-right-btn f-right d-none d-lg-block ml-15">
                   <a href="#" className="btn header-btn">
                     Make an Appointment
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
             {/* Mobile Menu */}
@@ -824,11 +824,11 @@ const BlogDetails = () => {
                 <div className="footer-copy-right">
                   <p>
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                    Copyright © All rights reserved | This template is made with{" "}
-                    <i className="fa fa-heart" aria-hidden="true" /> by{" "}
+                    Copyright © All rights reserved {" "}
+                    {/* <i className="fa fa-heart" aria-hidden="true" /> by{" "}
                     <a href="https://colorlib.com" target="_blank">
                       Colorlib
-                    </a>
+                    </a> */}
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   </p>
                 </div>

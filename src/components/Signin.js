@@ -1,37 +1,53 @@
+import Axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-// import axios from 'axios'
-// import { ToastContainer, toast } from "react-toastify";
+// import { Error } from 'react-admin';
+import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Signin = () => {
 
 const [Email,setEmail]=useState("")
 const [Password,setPassword]=useState("")
+const [Loading,setLoading]=useState(false);
+const navigate=useNavigate()
 
-// const loginData = {
-//   email: Email,
-//   password: Password,
-// }
-
-
-// const showToastMessage = () => {
-//   toast.success("Successfully logged in !", {
-//     position: toast.POSITION.TOP_RIGHT,
-//   });
-// };
+const loginData = {
+  email: Email,
+  password: Password,
+}
 
 
-// async function submitHandler(e) {
-//   e.preventDefault();
-//   await axios
-//     .post("http://mentalhealthyapi.herokuapp.com/api/login", loginData)
-//     .then((res) => {
-//       console.log(res);
-//       showToastMessage();
+const showToastMessage = () => {
+  toast.success("Successfully logged in !", {
+    position: toast.POSITION.TOP_RIGHT,
+  });
+};
+
+
+async function submitHandler(e) {
+  e.preventDefault();
+  // setLoading(true);
+  // try{
+  await Axios
+    .post("http://mentalhealthyapi.herokuapp.com/api/login",loginData)
+    .then((res) => {
+      <Link to="/Dashboard"></Link>
+      console.log(res);
+      // localStorage.setItem("token",res.data.access_token)
+      showToastMessage();
       
-//     });
-
+    })
+//     setLoading(false);
+// }catch{
+  // setEmail("");
+  // setPassword("");
+//   console.log('Error message',JSON.stringify(Error.message));
+//   setLoading(false);
+// }
+// if(localStorage.getItem('token')) navigate('/Dashboard')
+//     else navigate('/Signin')
+   };
 
 
 
@@ -43,7 +59,7 @@ const [Password,setPassword]=useState("")
       {/* <h1 className="sign-up__title">Welcome back!</h1> */}
       <Link to="/"><b>Back to Home </b></Link>
       <p className="sign-up__subtitle">Sign in to your account to continue</p>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
       <form className="sign-up-form form" action="" method="" style={{height:"50%",width:"500px"}}>
         <label className="form-label-wrapper">
           <p className="form-label">Email</p>
@@ -75,7 +91,7 @@ const [Password,setPassword]=useState("")
           <span className="form-checkbox-label">Remember me next time</span>
         </label>
         <button className="form-btn primary-default-btn transparent-btn"
-          //  onClick={submitHandler}
+           onClick={submitHandler}
            >
           Sign in
         </button>

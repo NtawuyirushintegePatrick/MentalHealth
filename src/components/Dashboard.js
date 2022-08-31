@@ -68,43 +68,43 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const data = [
   {
-    name: 'Page A',
+    name: 'Monday',
     uv: 4000,
     pv: 2400,
     amt: 2400,
   },
   {
-    name: 'Page B',
+    name: 'Tuesday',
     uv: 3000,
     pv: 1398,
     amt: 2210,
   },
   {
-    name: 'Page C',
+    name: 'Wednesday',
     uv: 2000,
     pv: 9800,
     amt: 2290,
   },
   {
-    name: 'Page D',
+    name: 'Thursday',
     uv: 2780,
     pv: 3908,
     amt: 2000,
   },
   {
-    name: 'Page E',
+    name: 'Friday',
     uv: 1890,
     pv: 4800,
     amt: 2181,
   },
   {
-    name: 'Page F',
+    name: 'Saturday',
     uv: 2390,
     pv: 3800,
     amt: 2500,
   },
   {
-    name: 'Page G',
+    name: 'Sunday',
     uv: 3490,
     pv: 4300,
     amt: 2100,
@@ -114,43 +114,43 @@ const data = [
 
 const data1 = [
   {
-    name: 'Page A',
+    name: 'Monday',
     uv: 4000,
     pv: 2400,
     amt: 2400,
   },
   {
-    name: 'Page B',
+    name: 'Tuesday',
     uv: 3000,
     pv: 1398,
     amt: 2210,
   },
   {
-    name: 'Page C',
+    name: 'Wedsday',
     uv: -1000,
     pv: 9800,
     amt: 2290,
   },
   {
-    name: 'Page D',
+    name: 'Thursday',
     uv: 500,
     pv: 3908,
     amt: 2000,
   },
   {
-    name: 'Page E',
+    name: 'Friday',
     uv: -2000,
     pv: 4800,
     amt: 2181,
   },
   {
-    name: 'Page F',
+    name: 'Saturday',
     uv: -250,
     pv: 3800,
     amt: 2500,
   },
   {
-    name: 'Page G',
+    name: 'Sunday',
     uv: 3490,
     pv: 4300,
     amt: 2100,
@@ -892,8 +892,8 @@ const Dashboardui = () => {
                   </div> */}
                 </div>
                 <div className="col-lg-3">
-                  <article className="customers-wrapper" style={{backgroundColor:'red'}}>
-                  <ResponsiveContainer width="100%" height="100%">
+                  <article className="customers-wrapper" >
+                  <ResponsiveContainer width="100%" height="100%" style={{backgroundColor:"white"}}>
         <AreaChart
           width={500}
           height={400}
@@ -906,7 +906,7 @@ const Dashboardui = () => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis data1Key="name" />
+          <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
           <defs>
@@ -915,7 +915,7 @@ const Dashboardui = () => {
               <stop offset={off} stopColor="red" stopOpacity={1} />
             </linearGradient>
           </defs>
-          <Area type="monotone" data1Key="uv" stroke="#000" fill="url(#splitColor)" />
+          <Area type="monotone" dataKey="uv" stroke="#000" fill="url(#splitColor)" />
         </AreaChart>
       </ResponsiveContainer>
                   </article>

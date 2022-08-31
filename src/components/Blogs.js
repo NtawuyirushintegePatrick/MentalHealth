@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Blogs = () => {
   return (
@@ -6,7 +7,7 @@ const Blogs = () => {
     
     <>
   {/*? Preloader Start */}
-  <div id="preloader-active">
+  {/* <div id="preloader-active">
     <div className="preloader d-flex align-items-center justify-content-center">
       <div className="preloader-inner position-relative">
         <div className="preloader-circle" />
@@ -15,7 +16,7 @@ const Blogs = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
   {/* Preloader Start */}
   <header>
     {/*? Header Start */}
@@ -26,51 +27,51 @@ const Blogs = () => {
             {/* Logo */}
             <div className="col-xl-2 col-lg-2 col-md-1">
               <div className="logo">
-                <a href="index.html">
+                <Link to="/">
                   <img src="assets/img/logo/logo.png" alt="" />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-xl-10 col-lg-10 col-md-10">
               <div className="menu-main d-flex align-items-center justify-content-end">
                 {/* Main-menu */}
                 <div className="main-menu f-right d-none d-lg-block">
-                  <nav>
+                <nav>
                     <ul id="navigation">
                       <li>
-                        <a href="index.html">Home</a>
+                        <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <a href="about.html">About</a>
+                        <Link to="/About">About</Link>
                       </li>
                       <li>
-                        <a href="services.html">Services</a>
+                        <Link to="/Services">Services</Link>
                       </li>
                       <li>
-                        <a href="blog.html">Blog</a>
+                        <a href="#blogs">Blog</a>
                         <ul className="submenu">
                           <li>
-                            <a href="blog.html">Blog</a>
+                            <Link to="/Blogs">Blog</Link>
                           </li>
                           <li>
-                            <a href="blog_details.html">Blog Details</a>
+                            <Link to="/BlogDetails">BlogDetails</Link>
                           </li>
                           <li>
-                            <a href="elements.html">Element</a>
+                            <Link to="/Elements">Element</Link>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <a href="contact.html">Contact</a>
+                        <Link to="/Contacts">Contacts</Link>
                       </li>
                     </ul>
                   </nav>
                 </div>
-                <div className="header-right-btn f-right d-none d-lg-block ml-15">
+                {/* <div className="header-right-btn f-right d-none d-lg-block ml-15">
                   <a href="#" className="btn header-btn">
                     Make an Appointment
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
             {/* Mobile Menu */}
@@ -713,11 +714,11 @@ const Blogs = () => {
                 <div className="footer-copy-right">
                   <p>
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                    Copyright © All rights reserved | This template is made with{" "}
-                    <i className="fa fa-heart" aria-hidden="true" /> by{" "}
+                    Copyright © All rights reserved {" "}
+                    {/* <i className="fa fa-heart" aria-hidden="true" /> by{" "}
                     <a href="https://colorlib.com" target="_blank">
                       Colorlib
-                    </a>
+                    </a> */}
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   </p>
                 </div>

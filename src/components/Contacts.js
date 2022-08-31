@@ -6,7 +6,7 @@ const Contacts = () => {
     
     
     <>
-  <div id="preloader-active">
+  {/* <div id="preloader-active">
     <div className="preloader d-flex align-items-center justify-content-center">
       <div className="preloader-inner position-relative">
         <div className="preloader-circle" />
@@ -15,7 +15,7 @@ const Contacts = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
   {/* Preloader Start */}
   <header>
     {/*? Header Start */}
@@ -66,11 +66,11 @@ const Contacts = () => {
                     </ul>
                   </nav>
                 </div>
-                <div className="header-right-btn f-right d-none d-lg-block ml-15">
+                {/* <div className="header-right-btn f-right d-none d-lg-block ml-15">
                   <a href="#" className="btn header-btn">
                     Make an Appointment
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
             {/* Mobile Menu */}
@@ -1819,10 +1819,10 @@ const Contacts = () => {
                     <img src="assets/img/logo/logo2_footer.png" alt="" />
                   </a>
                 </div>
-                <d iv="" className="header-area">
+                {/* <d iv="" className="header-area">
                   <div className="main-header main-header2">
                     <div className="menu-main d-flex align-items-center justify-content-start">
-                      {/* Main-menu */}
+                    
                       <div className="main-menu main-menu2">
                         <nav>
                           <ul>
@@ -1846,7 +1846,7 @@ const Contacts = () => {
                       </div>
                     </div>
                   </div>
-                </d>
+                </d> */}
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">
@@ -1921,11 +1921,11 @@ const Contacts = () => {
                 <div className="footer-copy-right">
                   <p>
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                    Copyright © All rights reserved | This template is made with{" "}
-                    <i className="fa fa-heart" aria-hidden="true" /> by{" "}
+                    Copyright © All rights reserved {" "}
+                    {/* <i className="fa fa-heart" aria-hidden="true" /> by{" "}
                     <a href="https://colorlib.com" target="_blank">
                       Colorlib
-                    </a>
+                    </a> */}
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   </p>
                 </div>

@@ -7,7 +7,7 @@ const Services = () => {
     
     <>
   {/* ? Preloader Start */}
-  <div id="preloader-active">
+  {/* <div id="preloader-active">
     <div className="preloader d-flex align-items-center justify-content-center">
       <div className="preloader-inner position-relative">
         <div className="preloader-circle" />
@@ -16,7 +16,7 @@ const Services = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
   {/* Preloader Start */}
   <header>
     {/*? Header Start */}
@@ -27,9 +27,9 @@ const Services = () => {
             {/* Logo */}
             <div className="col-xl-2 col-lg-2 col-md-1">
               <div className="logo">
-                <a href="index.html">
+                <Link to="/">
                   <img src="assets/img/logo/logo.png" alt="" />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-xl-10 col-lg-10 col-md-10">
@@ -57,7 +57,7 @@ const Services = () => {
                             <Link to="/BlogDetails">BlogDetails</Link>
                           </li>
                           <li>
-                            <Link to="/Elements">Element</Link>
+                            <Link to="/Element">Element</Link>
                           </li>
                         </ul>
                       </li>
@@ -67,11 +67,11 @@ const Services = () => {
                     </ul>
                   </nav>
                 </div>
-                <div className="header-right-btn f-right d-none d-lg-block ml-15">
+                {/* <div className="header-right-btn f-right d-none d-lg-block ml-15">
                   <a href="#" className="btn header-btn">
                     Make an Appointment
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
             {/* Mobile Menu */}
@@ -127,11 +127,11 @@ const Services = () => {
                 </p>
               </div>
             </div>
-            <div className="col-xl-2 col-lg-3 col-md-4">
+            {/* <div className="col-xl-2 col-lg-3 col-md-4">
               <a href="#" className="btn f-right sm-left">
                 Take a Service
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -410,11 +410,11 @@ const Services = () => {
                 <div className="footer-copy-right">
                   <p>
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                    Copyright © All rights reserved | This template is made with{" "}
-                    <i className="fa fa-heart" aria-hidden="true" /> by{" "}
+                    Copyright © All rights reserved {" "}
+                    {/* <i className="fa fa-heart" aria-hidden="true" /> by{" "}
                     <a href="https://colorlib.com" target="_blank">
                       Colorlib
-                    </a>
+                    </a> */}
                     {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                   </p>
                 </div>

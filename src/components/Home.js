@@ -6,7 +6,7 @@ const Home = () => {
     <>
     
 
-    <div id="preloader-active">
+    {/* <div id="preloader-active">
     <div className="preloader d-flex align-items-center justify-content-center">
       <div className="preloader-inner position-relative">
         <div className="preloader-circle" />
@@ -15,7 +15,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
   {/* Preloader Start */}
   <header>
     {/*? Header Start */}
@@ -26,9 +26,9 @@ const Home = () => {
             {/* Logo */}
             <div className="col-xl-2 col-lg-2 col-md-1">
               <div className="logo">
-                <a href="#">
+                <Link to="/">
                   <img src="assets/img/logo/logo.png" alt="" />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-xl-10 col-lg-10 col-md-10">
