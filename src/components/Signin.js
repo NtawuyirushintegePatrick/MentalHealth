@@ -45,6 +45,11 @@ async function submitHandler(e) {
       if(localStorage.getItem('token')!==null) 
       navigate('/Dashboard')
     })
+    // ,reason => { 
+    //   console.error(reason);
+    //   setError('Invalid Username or Password')
+    // }}
+    
 //     setLoading(false);
 // }catch{
   // setEmail("");
@@ -57,7 +62,7 @@ async function submitHandler(e) {
    };
 
 
-
+  
   return (
     <>
   <div className="layer" />
@@ -76,7 +81,7 @@ async function submitHandler(e) {
             value={Email}
             onChange={(e)=>{setEmail(e.target.value)}}
             placeholder="Enter your email"
-            required=""
+            required="Email needed"
           />
         </label>
         <label className="form-label-wrapper">
@@ -87,7 +92,7 @@ async function submitHandler(e) {
             value={Password}
             onChange={(e)=>{setPassword(e.target.value)}}
             placeholder="Enter your password"
-            required=""
+            required="Password needed"
           />
         </label>
         <a className="link-info forget-link" href="##">
@@ -108,7 +113,7 @@ async function submitHandler(e) {
       </form>
     </article>
   </main>
-</>
+   </>
   )
 }
 
