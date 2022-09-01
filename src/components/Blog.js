@@ -19,6 +19,17 @@ import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import "react-datepicker/dist/react-datepicker.css";
+
+import DatePicker from "react-datepicker";
+import axios from "axios";
+// import TextField from '@mui/material/TextField';
+// import AdapterDateFns from '@mui/lab/AdapterDateFns';
+// import LocalizationProvider from '@mui/lab/LocalizationProvider';
+// import TimePicker from '@mui/lab/TimePicker';
+// import DateTimePicker from '@mui/lab/DateTimePicker';
+// import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
+// import MobileDatePicker from '@mui/lab/MobileDatePicker';
 
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -85,6 +96,27 @@ const Dashboardui = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // const [startDate, setStartDate] = useState(new Date());
+
+  const [Title, setTitle] = useState("");
+  const [Content, setContent] = useState("");
+  const [Image, setImage] = useState("");
+
+  const newBlog = {
+    title: Title,
+    content: Content,
+    image: Image,
+  };
+
+  
+
+  // const [value, setValue] = React.useState(new Date('2014-08-18T21:11:54'));
+ 
+  // const handleChange = (newValue) => {
+  //   setValue(newValue);
+  // };
+
+
   function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };
   }
@@ -114,53 +146,6 @@ const Dashboardui = () => {
           size="small"
           style={{ Left: "50px" }}
         >
-          {/* <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                <h>New blog being Edited</h>
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <div className="user-container-form">
-                  <label>
-                    <b>Title:</b>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder=" Title"
-                    name="title"
-                  />
-                  <label>
-                    <b>Content</b>
-                  </label>
-                  <br />
-                  <textarea
-                    className="form-control"
-                    placeholder="Content"
-                    name="Content"
-                  ></textarea>
-                  <br />
-                  <label>
-                    <b>Image</b>
-                  </label>
-                  <input
-                    type="file"
-                    name="myImage"
-                    className="form-control"
-                    placeholder="Image"
-                  />
-                  <div className="user-button-field">
-                    <button className="user-button">Edit Blog</button>
-                  </div>
-                </div>
-              </Typography>
-            </Box>
-          </Modal> */}
           <ModeEditSharpIcon fontSize="small" />
         </IconButton>
       </Stack>
@@ -189,53 +174,7 @@ const Dashboardui = () => {
           size="small"
           style={{ Left: "50px" }}
         >
-          {/* <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                <h>New blog being Edited</h>
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <div className="user-container-form">
-                  <label>
-                    <b>Title:</b>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder=" Title"
-                    name="title"
-                  />
-                  <label>
-                    <b>Content</b>
-                  </label>
-                  <br />
-                  <textarea
-                    className="form-control"
-                    placeholder="Content"
-                    name="Content"
-                  ></textarea>
-                  <br />
-                  <label>
-                    <b>Image</b>
-                  </label>
-                  <input
-                    type="file"
-                    name="myImage"
-                    className="form-control"
-                    placeholder="Image"
-                  />
-                  <div className="user-button-field">
-                    <button className="user-button">Edit Blog</button>
-                  </div>
-                </div>
-              </Typography>
-            </Box>
-          </Modal> */}
+          
           <ModeEditSharpIcon fontSize="small" />
         </IconButton>
       </Stack>
@@ -264,53 +203,7 @@ const Dashboardui = () => {
           size="small"
           style={{ Left: "50px" }}
         >
-          {/* <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                <h>New blog being Edited</h>
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <div className="user-container-form">
-                  <label>
-                    <b>Title:</b>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder=" Title"
-                    name="title"
-                  />
-                  <label>
-                    <b>Content</b>
-                  </label>
-                  <br />
-                  <textarea
-                    className="form-control"
-                    placeholder="Content"
-                    name="Content"
-                  ></textarea>
-                  <br />
-                  <label>
-                    <b>Image</b>
-                  </label>
-                  <input
-                    type="file"
-                    name="myImage"
-                    className="form-control"
-                    placeholder="Image"
-                  />
-                  <div className="user-button-field">
-                    <button className="user-button">Edit Blog</button>
-                  </div>
-                </div>
-              </Typography>
-            </Box>
-          </Modal> */}
+       
           <ModeEditSharpIcon fontSize="small" />
         </IconButton>
       </Stack>
@@ -339,53 +232,7 @@ const Dashboardui = () => {
           size="small"
           style={{ Left: "50px" }}
         >
-          {/* <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                <h>New blog being Edited</h>
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <div className="user-container-form">
-                  <label>
-                    <b>Title:</b>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder=" Title"
-                    name="title"
-                  />
-                  <label>
-                    <b>Content</b>
-                  </label>
-                  <br />
-                  <textarea
-                    className="form-control"
-                    placeholder="Content"
-                    name="Content"
-                  ></textarea>
-                  <br />
-                  <label>
-                    <b>Image</b>
-                  </label>
-                  <input
-                    type="file"
-                    name="myImage"
-                    className="form-control"
-                    placeholder="Image"
-                  />
-                  <div className="user-button-field">
-                    <button className="user-button">Edit Blog</button>
-                  </div>
-                </div>
-              </Typography>
-            </Box>
-          </Modal> */}
+        
           <ModeEditSharpIcon fontSize="small" />
         </IconButton>
       </Stack>
@@ -413,59 +260,22 @@ const Dashboardui = () => {
           onClick={handleOpen}
           size="small"
           style={{ Left: "50px" }}
-        >
-          {/* <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                <h>New blog being Edited</h>
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <div className="user-container-form">
-                  <label>
-                    <b>Title:</b>
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder=" Title"
-                    name="title"
-                  />
-                  <label>
-                    <b>Content</b>
-                  </label>
-                  <br />
-                  <textarea
-                    className="form-control"
-                    placeholder="Content"
-                    name="Content"
-                  ></textarea>
-                  <br />
-                  <label>
-                    <b>Image</b>
-                  </label>
-                  <input
-                    type="file"
-                    name="myImage"
-                    className="form-control"
-                    placeholder="Image"
-                  />
-                  <div className="user-button-field">
-                    <button className="user-button">Edit Blog</button>
-                  </div>
-                </div>
-              </Typography>
-            </Box>
-          </Modal> */}
+        >    
           <ModeEditSharpIcon fontSize="small" />
         </IconButton>
       </Stack>
     ),
   ];
+
+  async function HandleNewBlog(e){
+    e.preventDefault();
+    await axios
+    .post("http://mentalhealthyapi.herokuapp.com/api/createBlog", newBlog)
+    .then((res) => {
+      console.log(res);
+  })
+  }
+
 
   return (
     <>
@@ -743,7 +553,7 @@ const Dashboardui = () => {
                             name="title"
                           />
                           <label>
-                            <b>Content</b>
+                            <b>Content:</b>
                           </label>
                           <br />
                           <textarea
@@ -753,7 +563,7 @@ const Dashboardui = () => {
                           ></textarea>
                           <br />
                           <label>
-                            <b>Image</b>
+                            <b>Image:</b>
                           </label>
                           <input
                             type="file"
@@ -761,8 +571,31 @@ const Dashboardui = () => {
                             className="form-control"
                             placeholder="Image"
                           />
+                          {/* <label>
+                            <b>Time:</b>
+                          </label> */}
+                          {/* <DatePicker selected={startDate} className="border" onChange={(date) => setStartDate(date)} /> */}
+                          {/* <input
+                            type="date"
+                            className=" border"
+                            placeholder=" Time"
+                            name="time"
+                          /> */}
+                          {/* <div style={{margin: "5% 40%"}}>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <Stack spacing={3}>
+        <DateTimePicker
+            label="Date&Time picker"
+            value={value}
+            onChange={handleChange}
+            renderInput={(params) => <TextField {...params} />}
+          />
+         
+        </Stack>
+      </LocalizationProvider>
+    </div> */}
                           <div className="user-button-field">
-                            <button className="user-button">Post Blog</button>
+                            <button className="user-button" onClick={HandleNewBlog}>Post Blog</button>
                           </div>
                         </div>
                       </Typography>
@@ -784,7 +617,7 @@ const Dashboardui = () => {
                           <TableCell><b>Blog Image</b></TableCell>
                           <TableCell align="right"><b>Title</b></TableCell>
                           <TableCell align="right"><b>Content</b></TableCell>
-                          <TableCell align="right"><b>Time</b></TableCell>
+                          {/* <TableCell align="right"><b>Time</b></TableCell> */}
                           <TableCell align="right"></TableCell>
                         </TableRow>
                       </TableHead>
@@ -801,295 +634,14 @@ const Dashboardui = () => {
                             </TableCell>
                             <TableCell align="right">{row.calories}</TableCell>
                             <TableCell align="right">{row.fat}</TableCell>
-                            <TableCell align="right">{row.carbs}</TableCell>
+                            {/* <TableCell align="right">{row.carbs}</TableCell> */}
                             <TableCell align="right">{row.protein}</TableCell>
                           </TableRow>
                         ))}
                       </TableBody>
                     </Table>
                   </TableContainer>
-                </div>
-                {/* <div className="row">
-                  <div className="col-lg-9">
-                    <div className="users-table table-wrapper">
-                      <table className="posts-table">
-                        <thead>
-                          <tr className="users-table-info">
-                            <th>Blog Title</th>
-                            <th>Author</th>
-                            <th>Status</th>
-                            <th>Date</th>
-                            <th>Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <label className="users-table__checkbox">
-                                <input type="checkbox" className="check" />
-                                <div className="categories-table-img"></div>
-                              </label>
-                            </td>
-                            <td>Starting your traveling blog with Vasco</td>
-                            <td>
-                              <div className="pages-table-img">
-                                Jenny Wilson
-                              </div>
-                            </td>
-                            <td>
-                              <span className="badge-pending">Pending</span>
-                            </td>
-                            <td>17.04.2021</td>
-                            <td>
-                              <span className="p-relative">
-                                <button
-                                  className="dropdown-btn transparent-btn"
-                                  type="button"
-                                  title="More info"
-                                >
-                                  <div className="sr-only">More info</div>
-                                  <i
-                                    data-feather="more-horizontal"
-                                    aria-hidden="true"
-                                  />
-                                </button>
-                                <ul className="users-item-dropdown dropdown">
-                                  <li>
-                                    <a href="##">Edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Quick edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Trash</a>
-                                  </li>
-                                </ul>
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <label className="users-table__checkbox">
-                                <input type="checkbox" className="check" />
-                                <div className="categories-table-img"></div>
-                              </label>
-                            </td>
-                            <td>Start a blog to reach your creative peak</td>
-                            <td>
-                              <div className="pages-table-img">
-                                Annette Black
-                              </div>
-                            </td>
-                            <td>
-                              <span className="badge-pending">Pending</span>
-                            </td>
-                            <td>23.04.2021</td>
-                            <td>
-                              <span className="p-relative">
-                                <button
-                                  className="dropdown-btn transparent-btn"
-                                  type="button"
-                                  title="More info"
-                                >
-                                  <div className="sr-only">More info</div>
-                                  <i
-                                    data-feather="more-horizontal"
-                                    aria-hidden="true"
-                                  />
-                                </button>
-                                <ul className="users-item-dropdown dropdown">
-                                  <li>
-                                    <a href="##">Edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Quick edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Trash</a>
-                                  </li>
-                                </ul>
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <label className="users-table__checkbox">
-                                <input type="checkbox" className="check" />
-                                <div className="categories-table-img"></div>
-                              </label>
-                            </td>
-                            <td>Helping a local business reinvent itself</td>
-                            <td>
-                              <div className="pages-table-img">
-                                Kathryn Murphy
-                              </div>
-                            </td>
-                            <td>
-                              <span className="badge-active">Active</span>
-                            </td>
-                            <td>17.04.2021</td>
-                            <td>
-                              <span className="p-relative">
-                                <button
-                                  className="dropdown-btn transparent-btn"
-                                  type="button"
-                                  title="More info"
-                                >
-                                  <div className="sr-only">More info</div>
-                                  <i
-                                    data-feather="more-horizontal"
-                                    aria-hidden="true"
-                                  />
-                                </button>
-                                <ul className="users-item-dropdown dropdown">
-                                  <li>
-                                    <a href="##">Edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Quick edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Trash</a>
-                                  </li>
-                                </ul>
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <label className="users-table__checkbox">
-                                <input type="checkbox" className="check" />
-                                <div className="categories-table-img"></div>
-                              </label>
-                            </td>
-                            <td>Caring is the new marketing</td>
-                            <td>
-                              <div className="pages-table-img">Guy Hawkins</div>
-                            </td>
-                            <td>
-                              <span className="badge-active">Active</span>
-                            </td>
-                            <td>17.04.2021</td>
-                            <td>
-                              <span className="p-relative">
-                                <button
-                                  className="dropdown-btn transparent-btn"
-                                  type="button"
-                                  title="More info"
-                                >
-                                  <div className="sr-only">More info</div>
-                                  <i
-                                    data-feather="more-horizontal"
-                                    aria-hidden="true"
-                                  />
-                                </button>
-                                <ul className="users-item-dropdown dropdown">
-                                  <li>
-                                    <a href="##">Edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Quick edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Trash</a>
-                                  </li>
-                                </ul>
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <label className="users-table__checkbox">
-                                <input type="checkbox" className="check" />
-                                <div className="categories-table-img"></div>
-                              </label>
-                            </td>
-                            <td>
-                              How to build a loyal community online and offline
-                            </td>
-                            <td>
-                              <div className="pages-table-img">Robert Fox</div>
-                            </td>
-                            <td>
-                              <span className="badge-active">Active</span>
-                            </td>
-                            <td>17.04.2021</td>
-                            <td>
-                              <span className="p-relative">
-                                <button
-                                  className="dropdown-btn transparent-btn"
-                                  type="button"
-                                  title="More info"
-                                >
-                                  <div className="sr-only">More info</div>
-                                  <i
-                                    data-feather="more-horizontal"
-                                    aria-hidden="true"
-                                  />
-                                </button>
-                                <ul className="users-item-dropdown dropdown">
-                                  <li>
-                                    <a href="##">Edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Quick edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Trash</a>
-                                  </li>
-                                </ul>
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <label className="users-table__checkbox">
-                                <input type="checkbox" className="check" />
-                                <div className="categories-table-img"></div>
-                              </label>
-                            </td>
-                            <td>
-                              How to build a loyal community online and offline
-                            </td>
-                            <td>
-                              <div className="pages-table-img">Robert Fox</div>
-                            </td>
-                            <td>
-                              <span className="badge-active">Active</span>
-                            </td>
-                            <td>17.04.2021</td>
-                            <td>
-                              <span className="p-relative">
-                                <button
-                                  className="dropdown-btn transparent-btn"
-                                  type="button"
-                                  title="More info"
-                                >
-                                  <div className="sr-only">More info</div>
-                                  <i
-                                    data-feather="more-horizontal"
-                                    aria-hidden="true"
-                                  />
-                                </button>
-                                <ul className="users-item-dropdown dropdown">
-                                  <li>
-                                    <a href="##">Edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Quick edit</a>
-                                  </li>
-                                  <li>
-                                    <a href="##">Trash</a>
-                                  </li>
-                                </ul>
-                              </span>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div> */}
+                </div>               
               </div>
             </div>
           </main>

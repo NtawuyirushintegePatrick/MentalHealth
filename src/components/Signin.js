@@ -10,7 +10,7 @@ const Signin = () => {
 
 const [Email,setEmail]=useState("")
 const [Password,setPassword]=useState("")
-const [Loading,setLoading]=useState(false);
+// const [Loading,setLoading]=useState(false);
 const navigate=useNavigate()
 
 const loginData = {

@@ -38,28 +38,7 @@ const Signup = () => {
         showToastMessage();
         
       });
-    // try{
-    //  await axios.post("http://mentalhealthyapi.herokuapp.com/api/register", registerData)
-    //   console.log(response);
-    // } catch(error) {
-    //   console.log(error)
-    // }
   }
-
-  // function submitHandler(e) {
-  //   e.preventDefault();
-  //   console.log(registerData)
-  //   fetch("http://mentalhealthyapi.herokuapp.com/api/register", {method: "POST", body: registerData, headers: {
-  //     "accept": "application/json",
-  //     "content-type": "application/json "
-  //   }})
-  //   .then((response)=>{
-  //     console.log(response)
-  //   })
-  //   .catch((error)=> {
-  //     console.log(error)
-  //   })
-  // }
 
   return (
     <>
