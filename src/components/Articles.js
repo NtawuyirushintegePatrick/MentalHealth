@@ -787,9 +787,9 @@ const Dashboardui = () => {
                     >
                       <TableHead>
                         <TableRow>
-                          <TableCell>Article title</TableCell>
-                          <TableCell align="right">Article author</TableCell>
-                          <TableCell align="right">Article description</TableCell>
+                          <TableCell><b>Article title</b></TableCell>
+                          <TableCell align="right"><b>Article author</b></TableCell>
+                          <TableCell align="right"><b>Article description</b></TableCell>
                           {/* <TableCell align="right">Time</TableCell> */}
                           <TableCell align="right"></TableCell>
                         </TableRow>

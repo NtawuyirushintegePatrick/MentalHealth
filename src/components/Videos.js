@@ -593,10 +593,10 @@ const Dashboardui = () => {
                     >
                       <TableHead>
                         <TableRow>
-                          <TableCell>Video Thumbnul</TableCell>
-                          <TableCell align="right">Video title</TableCell>
-                          <TableCell align="right">Video description</TableCell>
-                          <TableCell align="right">Video path</TableCell>
+                          <TableCell><b>Video Thumbnul</b></TableCell>
+                          <TableCell align="right"><b>Video title</b></TableCell>
+                          <TableCell align="right"><b>Video description</b></TableCell>
+                          <TableCell align="right"><b>Video path</b></TableCell>
                           <TableCell align="right"></TableCell>
                         </TableRow>
                       </TableHead>

@@ -10,11 +10,12 @@ import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Chart from 'chart.js/auto';
+import { useNavigate } from "react-router-dom";
 
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 // import { CChart } from "@coreui/react-chartjs";
 
 
@@ -177,10 +178,8 @@ const off = gradientOffset();
 
 
 
-
-
 const Dashboardui = () => {
-
+  const navigate=useNavigate();
   class Example extends PureComponent {
   static demoUrl = 'https://codesandbox.io/s/simple-area-chart-4ujxw';
 
@@ -190,7 +189,10 @@ const Dashboardui = () => {
   
 
   }
-
+  const handleLogout=()=>{
+    return navigate("/Signin")
+   }
+   
   
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -464,7 +466,7 @@ const Dashboardui = () => {
                   >
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
                     <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={handleLogout}>Logout</MenuItem>
                   </Menu>
 
                   {/* <button

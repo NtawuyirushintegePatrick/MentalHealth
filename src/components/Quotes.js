@@ -539,7 +539,7 @@ const Dashboardui = () => {
                       <TableHead>
                         <TableRow>
                           <TableCell><h><b>Qoute</b></h></TableCell>
-                          <TableCell align="right">Quote author</TableCell>
+                          <TableCell align="right"><b>Quote author</b></TableCell>
                           {/* <TableCell align="right">Qoute owner</TableCell> */}
                           <TableCell align="right"></TableCell>
                         </TableRow>

@@ -830,10 +830,10 @@ const Dashboardui = () => {
                     >
                       <TableHead>
                         <TableRow>
-                          <TableCell>First name</TableCell>
-                          <TableCell align="right">Last name</TableCell>
-                          <TableCell align="right">Email</TableCell>
-                          <TableCell align="right"> Sex</TableCell>
+                          <TableCell><b>First name</b></TableCell>
+                          <TableCell align="right"><b>Last name</b></TableCell>
+                          <TableCell align="right"><b>Email</b></TableCell>
+                          <TableCell align="right"><b>Sex</b></TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>

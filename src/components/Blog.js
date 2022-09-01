@@ -781,10 +781,10 @@ const Dashboardui = () => {
                     >
                       <TableHead>
                         <TableRow>
-                          <TableCell>Blog Image</TableCell>
-                          <TableCell align="right">Title</TableCell>
-                          <TableCell align="right">Content</TableCell>
-                          <TableCell align="right">Time</TableCell>
+                          <TableCell><b>Blog Image</b></TableCell>
+                          <TableCell align="right"><b>Title</b></TableCell>
+                          <TableCell align="right"><b>Content</b></TableCell>
+                          <TableCell align="right"><b>Time</b></TableCell>
                           <TableCell align="right"></TableCell>
                         </TableRow>
                       </TableHead>

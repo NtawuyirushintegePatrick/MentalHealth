@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Signin = () => {
 
+
 const [Email,setEmail]=useState("")
 const [Password,setPassword]=useState("")
 const [Loading,setLoading]=useState(false);
@@ -29,14 +30,20 @@ async function submitHandler(e) {
   e.preventDefault();
   // setLoading(true);
   // try{
+    
+  // console.log('Datas',loginData)
   await Axios
     .post("http://mentalhealthyapi.herokuapp.com/api/login",loginData)
     .then((res) => {
-      <Link to="/Dashboard"></Link>
-      console.log(res);
-      // localStorage.setItem("token",res.data.access_token)
+      console.log('token data',res.data);
+      localStorage.setItem("token",res.data.access_token)
+        
+
+
       showToastMessage();
       
+      if(localStorage.getItem('token')!==null) 
+      navigate('/Dashboard')
     })
 //     setLoading(false);
 // }catch{
