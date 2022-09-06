@@ -542,13 +542,13 @@ const Dashboardui = () => {
                 Articles
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link  to="/Quotes">
                 <span className="icon message" aria-hidden="true" />
                 Quotes
               </Link>
               
-            </li>
+            </li> */}
           </ul>
           <ul className="sidebar-body-menu">
             <li>

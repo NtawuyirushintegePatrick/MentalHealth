@@ -20,16 +20,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import "react-datepicker/dist/react-datepicker.css";
-
-import DatePicker from "react-datepicker";
 import axios from "axios";
-// import TextField from '@mui/material/TextField';
-// import AdapterDateFns from '@mui/lab/AdapterDateFns';
-// import LocalizationProvider from '@mui/lab/LocalizationProvider';
-// import TimePicker from '@mui/lab/TimePicker';
-// import DateTimePicker from '@mui/lab/DateTimePicker';
-// import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
-// import MobileDatePicker from '@mui/lab/MobileDatePicker';
 
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -101,6 +92,8 @@ const Dashboardui = () => {
   const [Title, setTitle] = useState("");
   const [Content, setContent] = useState("");
   const [Image, setImage] = useState("");
+  // const [Author,setAuthor] = useState("");
+  const [Data,setData] = useState([]);
 
   const newBlog = {
     title: Title,
@@ -117,8 +110,8 @@ const Dashboardui = () => {
   // };
 
 
-  function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
+  function createData(image, title, content, carbs, protein) {
+    return { image, title, content, carbs, protein };
   }
 
   const rows = [
@@ -135,6 +128,7 @@ const Dashboardui = () => {
       >
         <IconButton
           aria-label="delete"
+          // onClick={handleDelete}
           size="small"
           style={{ Left: "50px", color: "red" }}
         >
@@ -150,131 +144,149 @@ const Dashboardui = () => {
         </IconButton>
       </Stack>
     ),
-    createData(
-      "Image2",
-      "Blog Title1",
-      "Content1",
-      "Time1",
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={1}
-        style={{ background: "white" }}
-      >
-        <IconButton
-          aria-label="delete"
-          size="small"
-          style={{ Left: "50px", color: "red" }}
-        >
-          <DeleteIcon fontSize="small" />
-        </IconButton>
-        <IconButton
-          aria-label="edit"
-          onClick={handleOpen}
-          size="small"
-          style={{ Left: "50px" }}
-        >
+    // createData(
+    //   "Image2",
+    //   "Blog Title1",
+    //   "Content1",
+    //   "Time1",
+    //   <Stack
+    //     direction="row"
+    //     alignItems="center"
+    //     spacing={1}
+    //     style={{ background: "white" }}
+    //   >
+    //     <IconButton
+    //       aria-label="delete"
+    //       // onClick={handleDelete}
+    //       size="small"
+    //       style={{ Left: "50px", color: "red" }}
+    //     >
+    //       <DeleteIcon fontSize="small" />
+    //     </IconButton>
+    //     <IconButton
+    //       aria-label="edit"
+    //       onClick={handleOpen}
+    //       size="small"
+    //       style={{ Left: "50px" }}
+    //     >
           
-          <ModeEditSharpIcon fontSize="small" />
-        </IconButton>
-      </Stack>
-    ),
-    createData(
-      "Image3",
-      "Blog Title1",
-      "Content1",
-      "Time1",
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={1}
-        style={{ background: "white" }}
-      >
-        <IconButton
-          aria-label="delete"
-          size="small"
-          style={{ Left: "50px", color: "red" }}
-        >
-          <DeleteIcon fontSize="small" />
-        </IconButton>
-        <IconButton
-          aria-label="edit"
-          onClick={handleOpen}
-          size="small"
-          style={{ Left: "50px" }}
-        >
+    //       <ModeEditSharpIcon fontSize="small" />
+    //     </IconButton>
+    //   </Stack>
+    // ),
+    // createData(
+    //   "Image3",
+    //   "Blog Title1",
+    //   "Content1",
+    //   "Time1",
+    //   <Stack
+    //     direction="row"
+    //     alignItems="center"
+    //     spacing={1}
+    //     style={{ background: "white" }}
+    //   >
+    //     <IconButton
+    //       aria-label="delete"
+    //       // onClick={handleDelete}
+    //       size="small"
+    //       style={{ Left: "50px", color: "red" }}
+    //     >
+    //       <DeleteIcon fontSize="small" />
+    //     </IconButton>
+    //     <IconButton
+    //       aria-label="edit"
+    //       onClick={handleOpen}
+    //       size="small"
+    //       style={{ Left: "50px" }}
+    //     >
        
-          <ModeEditSharpIcon fontSize="small" />
-        </IconButton>
-      </Stack>
-    ),
-    createData(
-      "Image4",
-      "Blog Title1",
-      "Content1",
-      "Time1",
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={1}
-        style={{ background: "white" }}
-      >
-        <IconButton
-          aria-label="delete"
-          size="small"
-          style={{ Left: "50px", color: "red" }}
-        >
-          <DeleteIcon fontSize="small" />
-        </IconButton>
-        <IconButton
-          aria-label="edit"
-          onClick={handleOpen}
-          size="small"
-          style={{ Left: "50px" }}
-        >
+    //       <ModeEditSharpIcon fontSize="small" />
+    //     </IconButton>
+    //   </Stack>
+    // ),
+    // createData(
+    //   "Image4",
+    //   "Blog Title1",
+    //   "Content1",
+    //   "Time1",
+    //   <Stack
+    //     direction="row"
+    //     alignItems="center"
+    //     spacing={1}
+    //     style={{ background: "white" }}
+    //   >
+    //     <IconButton
+    //       aria-label="delete"
+    //       // onClick={handleDelete}
+    //       size="small"
+    //       style={{ Left: "50px", color: "red" }}
+    //     >
+    //       <DeleteIcon fontSize="small" />
+    //     </IconButton>
+    //     <IconButton
+    //       aria-label="edit"
+    //       onClick={handleOpen}
+    //       size="small"
+    //       style={{ Left: "50px" }}
+    //     >
         
-          <ModeEditSharpIcon fontSize="small" />
-        </IconButton>
-      </Stack>
-    ),
-    createData(
-      "Image5",
-      "Blog Title1",
-      "Content1",
-      "Time1",
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={1}
-        style={{ background: "white" }}
-      >
-        <IconButton
-          aria-label="delete"
-          size="small"
-          style={{ Left: "50px", color: "red" }}
-        >
-          <DeleteIcon fontSize="small" />
-        </IconButton>
-        <IconButton
-          aria-label="edit"
-          onClick={handleOpen}
-          size="small"
-          style={{ Left: "50px" }}
-        >    
-          <ModeEditSharpIcon fontSize="small" />
-        </IconButton>
-      </Stack>
-    ),
+    //       <ModeEditSharpIcon fontSize="small" />
+    //     </IconButton>
+    //   </Stack>
+    // ),
+    // createData(
+    //   "Image5",
+    //   "Blog Title1",
+    //   "Content1",
+    //   "Time1",
+    //   <Stack
+    //     direction="row"
+    //     alignItems="center"
+    //     spacing={1}
+    //     style={{ background: "white" }}
+    //   >
+    //     <IconButton
+    //       aria-label="delete"
+    //       // onClick={handleDelete}
+    //       size="small"
+    //       style={{ Left: "50px", color: "red" }}
+    //     >
+    //       <DeleteIcon fontSize="small" />
+    //     </IconButton>
+    //     <IconButton
+    //       aria-label="edit"
+    //       onClick={handleOpen}
+    //       size="small"
+    //       style={{ Left: "50px" }}
+    //     >    
+    //       <ModeEditSharpIcon fontSize="small" />
+    //     </IconButton>
+    //   </Stack>
+    // ),
   ];
 
   async function HandleNewBlog(e){
+    const Token = localStorage.getItem("token")
     e.preventDefault();
+    const options = {
+      headers: {'Authorization': `bearer ${Token}`}
+    };
     await axios
-    .post("http://mentalhealthyapi.herokuapp.com/api/createBlog", newBlog)
+    .post("http://mentalhealthyapi.herokuapp.com/api/createBlog",
+
+      newBlog,
+      options
+    )
+    
     .then((res) => {
+       setData(res);
       console.log(res);
-  })
+      
+    });
   }
+  //  const handleDelete =(e)=>{
+
+  //  }
 
 
   return (
@@ -339,12 +351,12 @@ const Dashboardui = () => {
                     Articles
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/quotes">
                     <span className="icon message" aria-hidden="true" />
                     Quotes
                   </Link>
-                </li>
+                </li> */}
               </ul>
               <ul className="sidebar-body-menu">
                 <li>
@@ -551,6 +563,8 @@ const Dashboardui = () => {
                             className="form-control border"
                             placeholder=" Title"
                             name="title"
+                            value={Title}
+                            onChange={(e) => setTitle(e.target.value)}
                           />
                           <label>
                             <b>Content:</b>
@@ -560,7 +574,11 @@ const Dashboardui = () => {
                             className="form-control"
                             placeholder="Content"
                             name="Content"
+                            value={Content}
+                            onChange={(e) => setContent(e.target.value)}
                           ></textarea>
+                          <br />
+                         
                           <br />
                           <label>
                             <b>Image:</b>
@@ -568,6 +586,8 @@ const Dashboardui = () => {
                           <input
                             type="file"
                             name="myImage"
+                            value={Image}
+                            onChange={(e) => setImage(e.target.value)}
                             className="form-control"
                             placeholder="Image"
                           />
@@ -630,11 +650,10 @@ const Dashboardui = () => {
                             }}
                           >
                             <TableCell component="th" scope="row">
-                              {row.name}
+                              {row.image}
                             </TableCell>
-                            <TableCell align="right">{row.calories}</TableCell>
-                            <TableCell align="right">{row.fat}</TableCell>
-                            {/* <TableCell align="right">{row.carbs}</TableCell> */}
+                            <TableCell align="right">{row.title}</TableCell>
+                            <TableCell align="right">{row.content}</TableCell>
                             <TableCell align="right">{row.protein}</TableCell>
                           </TableRow>
                         ))}

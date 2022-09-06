@@ -286,12 +286,12 @@ const Dashboardui = () => {
                     </span>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/quotes">
                     <span className="icon message" aria-hidden="true" />
                     Quotes
                   </Link>
-                </li>
+                </li> */}
               </ul>
 
               <ul className="sidebar-body-menu">

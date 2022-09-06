@@ -85,8 +85,11 @@ const style = {
 
 
 const Dashboardui = () => {
-
-
+ 
+//  useEffect(() => {
+//    localStorage.removeItem("token")
+//  }, [])
+ 
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -357,14 +360,14 @@ const Dashboardui = () => {
                   </Link>
                  
                 </li>
-                <li>
+                {/* <li>
                   
                   <Link to="/quotes">
                     <span className="icon message" aria-hidden="true" />
                     Quotes
                   </Link>
                   
-                </li>
+                </li> */}
               </ul>
               <ul className="sidebar-body-menu">
                 <li>

@@ -384,9 +384,9 @@ const Home = () => {
         </div>
       </div>
     </section>
-    <section className="home-blog-area section-padding30" id='blogs'>
+    {/* <section className="home-blog-area section-padding30" id='blogs'>
       <div className="container">
-        {/* Section Tittle */}
+      
         <div className="row justify-content-center">
           <div className="col-lg-7 col-md-9 col-sm-10">
             <div className="section-tittle text-center mb-100">
@@ -453,7 +453,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     {/* Blog Area End */}
     {/*? About Law Start*/}
     <section className="about-low-area mt-30" id='about'>
