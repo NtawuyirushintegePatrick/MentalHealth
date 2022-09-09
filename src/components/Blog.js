@@ -1,4 +1,5 @@
-import { React, useState } from "react";
+import { React, useState,useEffect} from "react";
+// import styled from "@mui/material"
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -21,8 +22,13 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import { id } from "date-fns/locale";
 
-
+      
+const styledTable = styled(Table)`
+width:100%;
+margin: 50px auto 0 auto;
+`
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
@@ -94,8 +100,10 @@ const Dashboardui = () => {
   const [Image, setImage] = useState("");
   // const [Author,setAuthor] = useState("");
   const [Data,setData] = useState([]);
+  const [blogs,setBlogs]=useState([]);
 
   const newBlog = {
+    id:id,
     title: Title,
     content: Content,
     image: Image,
@@ -110,160 +118,41 @@ const Dashboardui = () => {
   // };
 
 
-  function createData(image, title, content, carbs, protein) {
-    return { image, title, content, carbs, protein };
-  }
+  // function createData(image, title, content, carbs, protein) {
+  //   return { image, title, content, carbs, protein };
+  // }
 
-  const rows = [
-    createData(
-      "Image1",
-      "Blog Title1",
-      "Content1",
-      "Time1",
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={1}
-        style={{ background: "white" }}
-      >
-        <IconButton
-          aria-label="delete"
-          // onClick={handleDelete}
-          size="small"
-          style={{ Left: "50px", color: "red" }}
-        >
-          <DeleteIcon fontSize="small" />
-        </IconButton>
-        <IconButton
-          aria-label="edit"
-          onClick={handleOpen}
-          size="small"
-          style={{ Left: "50px" }}
-        >
-          <ModeEditSharpIcon fontSize="small" />
-        </IconButton>
-      </Stack>
-    ),
-    // createData(
-    //   "Image2",
-    //   "Blog Title1",
-    //   "Content1",
-    //   "Time1",
-    //   <Stack
-    //     direction="row"
-    //     alignItems="center"
-    //     spacing={1}
-    //     style={{ background: "white" }}
-    //   >
-    //     <IconButton
-    //       aria-label="delete"
-    //       // onClick={handleDelete}
-    //       size="small"
-    //       style={{ Left: "50px", color: "red" }}
-    //     >
-    //       <DeleteIcon fontSize="small" />
-    //     </IconButton>
-    //     <IconButton
-    //       aria-label="edit"
-    //       onClick={handleOpen}
-    //       size="small"
-    //       style={{ Left: "50px" }}
-    //     >
-          
-    //       <ModeEditSharpIcon fontSize="small" />
-    //     </IconButton>
-    //   </Stack>
-    // ),
-    // createData(
-    //   "Image3",
-    //   "Blog Title1",
-    //   "Content1",
-    //   "Time1",
-    //   <Stack
-    //     direction="row"
-    //     alignItems="center"
-    //     spacing={1}
-    //     style={{ background: "white" }}
-    //   >
-    //     <IconButton
-    //       aria-label="delete"
-    //       // onClick={handleDelete}
-    //       size="small"
-    //       style={{ Left: "50px", color: "red" }}
-    //     >
-    //       <DeleteIcon fontSize="small" />
-    //     </IconButton>
-    //     <IconButton
-    //       aria-label="edit"
-    //       onClick={handleOpen}
-    //       size="small"
-    //       style={{ Left: "50px" }}
-    //     >
-       
-    //       <ModeEditSharpIcon fontSize="small" />
-    //     </IconButton>
-    //   </Stack>
-    // ),
-    // createData(
-    //   "Image4",
-    //   "Blog Title1",
-    //   "Content1",
-    //   "Time1",
-    //   <Stack
-    //     direction="row"
-    //     alignItems="center"
-    //     spacing={1}
-    //     style={{ background: "white" }}
-    //   >
-    //     <IconButton
-    //       aria-label="delete"
-    //       // onClick={handleDelete}
-    //       size="small"
-    //       style={{ Left: "50px", color: "red" }}
-    //     >
-    //       <DeleteIcon fontSize="small" />
-    //     </IconButton>
-    //     <IconButton
-    //       aria-label="edit"
-    //       onClick={handleOpen}
-    //       size="small"
-    //       style={{ Left: "50px" }}
-    //     >
-        
-    //       <ModeEditSharpIcon fontSize="small" />
-    //     </IconButton>
-    //   </Stack>
-    // ),
-    // createData(
-    //   "Image5",
-    //   "Blog Title1",
-    //   "Content1",
-    //   "Time1",
-    //   <Stack
-    //     direction="row"
-    //     alignItems="center"
-    //     spacing={1}
-    //     style={{ background: "white" }}
-    //   >
-    //     <IconButton
-    //       aria-label="delete"
-    //       // onClick={handleDelete}
-    //       size="small"
-    //       style={{ Left: "50px", color: "red" }}
-    //     >
-    //       <DeleteIcon fontSize="small" />
-    //     </IconButton>
-    //     <IconButton
-    //       aria-label="edit"
-    //       onClick={handleOpen}
-    //       size="small"
-    //       style={{ Left: "50px" }}
-    //     >    
-    //       <ModeEditSharpIcon fontSize="small" />
-    //     </IconButton>
-    //   </Stack>
-    // ),
-  ];
+  // const rows = [
+  //   createData(
+  //     "Image1",
+  //     "Blog Title1",
+  //     "Content1",
+  //     "Time1",
+  //     <Stack
+  //       direction="row"
+  //       alignItems="center"
+  //       spacing={1}
+  //       style={{ background: "white" }}
+  //     >
+  //       <IconButton
+  //         aria-label="delete"
+  //         onClick={handleDelete}
+  //         size="small"
+  //         style={{ Left: "50px", color: "red" }}
+  //       >
+  //         <DeleteIcon fontSize="small" />
+  //       </IconButton>
+  //       <IconButton
+  //         aria-label="edit"
+  //         onClick={handleOpen}
+  //         size="small"
+  //         style={{ Left: "50px" }}
+  //       >
+  //         <ModeEditSharpIcon fontSize="small" />
+  //       </IconButton>
+  //     </Stack>
+  //   ),
+  // ];
 
   async function HandleNewBlog(e){
     const Token = localStorage.getItem("token")
@@ -280,13 +169,64 @@ const Dashboardui = () => {
     
     .then((res) => {
        setData(res);
-      console.log(res);
+      // console.log(res);
+      handlePost();
       
     });
   }
-  //  const handleDelete =(e)=>{
 
-  //  }
+    async function handlePost (e){
+      await axios
+      .get("http://mentalhealthyapi.herokuapp.com/api/allBlogs")
+      
+      .then((response) => {
+         setBlogs(response.data.Blogs);
+        console.log(response.data.Blogs);
+        
+
+      })
+    }
+
+
+    function deleteBlogs(id){
+      setBlogs([...blogs].filter(blogs => blogs.id !== id));
+      console.log(blogs)
+    }
+  
+    // async function handleDelete (e){
+
+    //   const Token = localStorage.getItem("token")
+    //   e.preventDefault();
+    //   const options = {
+    //     headers: {'Authorization': `bearer ${Token}`}
+    //   };
+    //   const id = Blogs.id
+    //   await axios
+    //     .delete(`http://mentalhealthyapi.herokuapp.com/api/deleteBlog/${id}`);
+      
+    // }
+
+    // const getBlogs = async () => {
+    //   try{
+    //     return await axios.get("http://mentalhealthyapi.herokuapp.com/api/allBlogs");
+    //   }catch (error){
+    //      console.log('Error while fetching user from API',error.message);
+    //   }
+    // }
+
+   
+
+    // const getBlogsDetails = async() => {
+    //     let response=await getBlogs();
+    //     console.log("response" +response);
+
+    //     setBlogs(response.data)
+    // }
+    // console.log(blogs.Blogs);
+
+    // useEffect(() =>{
+    //   getBlogsDetails();
+    // },[])
 
 
   return (
@@ -538,6 +478,7 @@ const Dashboardui = () => {
               <div className="row stat-cards">
                 <div className="user-container">
                   <Button className="border" onClick={handleOpen}>Create blog</Button>
+                  {/* <Button className="border" onClick={handlePost}>All Blogs</Button> */}
                   <Modal
                     open={open}
                     onClose={handleClose}
@@ -591,29 +532,7 @@ const Dashboardui = () => {
                             className="form-control"
                             placeholder="Image"
                           />
-                          {/* <label>
-                            <b>Time:</b>
-                          </label> */}
-                          {/* <DatePicker selected={startDate} className="border" onChange={(date) => setStartDate(date)} /> */}
-                          {/* <input
-                            type="date"
-                            className=" border"
-                            placeholder=" Time"
-                            name="time"
-                          /> */}
-                          {/* <div style={{margin: "5% 40%"}}>
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <Stack spacing={3}>
-        <DateTimePicker
-            label="Date&Time picker"
-            value={value}
-            onChange={handleChange}
-            renderInput={(params) => <TextField {...params} />}
-          />
-         
-        </Stack>
-      </LocalizationProvider>
-    </div> */}
+                       
                           <div className="user-button-field">
                             <button className="user-button" onClick={HandleNewBlog}>Post Blog</button>
                           </div>
@@ -623,7 +542,40 @@ const Dashboardui = () => {
                   </Modal>
                   <br />
                   <br />
-                  <TableContainer
+
+                  <styledTable >
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>ID</TableCell>
+                        <TableCell>Blog Title</TableCell>
+                        <TableCell>Blog Description</TableCell>
+                        <TableCell>Blog Image</TableCell>
+                        <TableCell>Blog Image</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {
+                        blogs.map(blog => (
+                          <TableRow>
+                            <TableCell>{blog.id}</TableCell>
+                            <TableCell>{blog.title}</TableCell>
+                            <TableCell>{blog.content}</TableCell>
+                            <TableCell><img
+                               src={blog.image}
+                        
+                        />
+                        
+                        </TableCell>
+                            <TableCell>
+                              <Button variant="contained" style={{margin:"10px"}} >Edit</Button>
+                              <Button variant="contained" color="secondary" onClick={() => deleteBlogs(blogs.id)}>Delete</Button>
+                            </TableCell>
+                          </TableRow>
+                        ))
+                        }
+                    </TableBody>
+                  </styledTable >
+                  {/* <TableContainer
                     component={Paper}
                     style={{ marginLeft: "20%"}}
                   >
@@ -637,29 +589,28 @@ const Dashboardui = () => {
                           <TableCell><b>Blog Image</b></TableCell>
                           <TableCell align="right"><b>Title</b></TableCell>
                           <TableCell align="right"><b>Content</b></TableCell>
-                          {/* <TableCell align="right"><b>Time</b></TableCell> */}
                           <TableCell align="right"></TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {rows.map((row) => (
+                        {Blogs.map((blog) => (
                           <TableRow
-                            key={row.name}
+                            key={blog.id}
                             sx={{
                               "&:last-child td, &:last-child th": { border: 0 },
                             }}
                           >
                             <TableCell component="th" scope="row">
-                              {row.image}
+                              {Blogs.image}
                             </TableCell>
-                            <TableCell align="right">{row.title}</TableCell>
-                            <TableCell align="right">{row.content}</TableCell>
-                            <TableCell align="right">{row.protein}</TableCell>
+                            <TableCell align="right">{blog.image}</TableCell>
+                            <TableCell align="right">{blog.title}</TableCell>
+                            <TableCell align="right">{blog.content}</TableCell>
                           </TableRow>
                         ))}
                       </TableBody>
                     </Table>
-                  </TableContainer>
+                  </TableContainer> */}
                 </div>               
               </div>
             </div>

@@ -55,9 +55,9 @@ const Contacts = () => {
                           <li>
                             <Link to="/BlogDetails">BlogDetails</Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link to="/Elements">Element</Link>
-                          </li>
+                          </li> */}
                         </ul>
                       </li>
                       <li>
@@ -1771,15 +1771,13 @@ const Contacts = () => {
         </div>
       </div>
     </section>
-    {/* Contact Area End */}
-    {/*? About Law Start*/}
-    <section className="about-low-area mt-60">
+    {/* <section className="about-low-area mt-60">
       <div className="container">
         <div className="about-cap-wrapper">
           <div className="row">
             <div className="col-xl-5  col-lg-6 col-md-10 offset-xl-1">
               <div className="about-caption mb-50">
-                {/* Section Tittle */}
+               
                 <div className="section-tittle mb-35">
                   <h2>100% satisfaction guaranteed.</h2>
                 </div>
@@ -1790,7 +1788,7 @@ const Contacts = () => {
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
-              {/* about-img */}
+              
               <div className="about-img">
                 <div className="about-font-img">
                   <img src="assets/img/gallery/about2.png" alt="" />
@@ -1800,7 +1798,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     {/* About Law End*/}
   </main>
   <footer>

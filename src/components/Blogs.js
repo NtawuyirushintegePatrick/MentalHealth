@@ -56,9 +56,9 @@ const Blogs = () => {
                           <li>
                             <Link to="/BlogDetails">BlogDetails</Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link to="/Elements">Element</Link>
-                          </li>
+                          </li> */}
                         </ul>
                       </li>
                       <li>
@@ -444,7 +444,7 @@ const Blogs = () => {
                   </div>
                 </div>
               </aside>
-              <aside className="single_sidebar_widget tag_cloud_widget">
+              {/* <aside className="single_sidebar_widget tag_cloud_widget">
                 <h4 className="widget_title" style={{ color: "#2d2d2d" }}>
                   Tag Clouds
                 </h4>
@@ -535,7 +535,7 @@ const Blogs = () => {
                     </a>
                   </li>
                 </ul>
-              </aside>
+              </aside> */}
               <aside className="single_sidebar_widget newsletter_widget">
                 <h4 className="widget_title" style={{ color: "#2d2d2d" }}>
                   Newsletter
@@ -564,15 +564,14 @@ const Blogs = () => {
         </div>
       </div>
     </section>
-    {/* Blog Area End */}
-    {/*? About Law Start*/}
-    <section className="about-low-area mt-60">
+  
+    {/* <section className="about-low-area mt-60">
       <div className="container">
         <div className="about-cap-wrapper">
           <div className="row">
             <div className="col-xl-5  col-lg-6 col-md-10 offset-xl-1">
               <div className="about-caption mb-50">
-                {/* Section Tittle */}
+                
                 <div className="section-tittle mb-35">
                   <h2>100% satisfaction guaranteed.</h2>
                 </div>
@@ -583,7 +582,7 @@ const Blogs = () => {
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
-              {/* about-img */}
+              
               <div className="about-img">
                 <div className="about-font-img">
                   <img src="assets/img/gallery/about2.png" alt="" />
@@ -594,7 +593,7 @@ const Blogs = () => {
         </div>
       </div>
     </section>
-    {/* About Law End*/}
+    */}
   </main>
   <footer>
     <div
@@ -612,10 +611,10 @@ const Blogs = () => {
                     <img src="assets/img/logo/logo2_footer.png" alt="" />
                   </a>
                 </div>
-                <d iv="" className="header-area">
+                {/* <d iv="" className="header-area">
                   <div className="main-header main-header2">
                     <div className="menu-main d-flex align-items-center justify-content-start">
-                      {/* Main-menu */}
+                      
                       <div className="main-menu main-menu2">
                         <nav>
                           <ul>
@@ -639,7 +638,7 @@ const Blogs = () => {
                       </div>
                     </div>
                   </div>
-                </d>
+                </d> */}
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">

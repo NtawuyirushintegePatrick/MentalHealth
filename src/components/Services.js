@@ -56,9 +56,9 @@ const Services = () => {
                           <li>
                             <Link to="/BlogDetails">BlogDetails</Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link to="/Element">Element</Link>
-                          </li>
+                          </li> */}
                         </ul>
                       </li>
                       <li>
@@ -147,7 +147,7 @@ const Services = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Physical Activity</a>
+                  <a href="services.html">Services one</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
@@ -166,7 +166,7 @@ const Services = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Physical Activity</a>
+                  <a href="services.html">Service Two</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
@@ -185,7 +185,7 @@ const Services = () => {
               </div>
               <div className="cat-cap">
                 <h5>
-                  <a href="services.html">Physical Activity</a>
+                  <a href="services.html">Service Three</a>
                 </h5>
                 <p>
                   Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
@@ -202,7 +202,7 @@ const Services = () => {
     </div>
     {/* Services Area End */}
     {/*? video_start */}
-    <div className="container pt-40">
+    {/* <div className="container pt-40">
       <div
         className="video-area section-bg2 d-flex align-items-center"
         data-background="assets/img/gallery/video-bg.png"
@@ -218,17 +218,17 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
     {/* video_end */}
     {/*? Testimonial Area Start */}
-    <section className="testimonial-area testimonial-padding fix pb-bottom">
+    {/* <section className="testimonial-area testimonial-padding fix pb-bottom">
       <div className="container">
         <div className="row align-items-center justify-content-center">
           <div className=" col-lg-9">
             <div className="about-caption">
-              {/* Testimonial Start */}
+         
               <div className="h1-testimonial-active dot-style">
-                {/* Single Testimonial */}
+           
                 <div className="single-testimonial position-relative">
                   <div className="testimonial-caption">
                     <img
@@ -242,7 +242,7 @@ const Services = () => {
                       Placeholder text commonly used. In publishing and graphic.
                     </p>
                   </div>
-                  {/* founder */}
+                 
                   <div className="testimonial-founder d-flex align-items-center">
                     <div className="founder-img">
                       <img src="assets/img/icon/testimonial.png" alt="" />
@@ -254,21 +254,20 @@ const Services = () => {
                   </div>
                 </div>
               </div>
-              {/* Testimonial End */}
+              
             </div>
           </div>
         </div>
       </div>
-    </section>
-    {/*? Testimonial Area End */}
-    {/*? About Law Start*/}
-    <section className="about-low-area mt-80">
+    </section> */}
+   
+    {/* <section className="about-low-area mt-80">
       <div className="container">
         <div className="about-cap-wrapper">
           <div className="row">
             <div className="col-xl-5  col-lg-6 col-md-10 offset-xl-1">
               <div className="about-caption mb-50">
-                {/* Section Tittle */}
+                
                 <div className="section-tittle mb-35">
                   <h2>100% satisfaction guaranteed.</h2>
                 </div>
@@ -279,7 +278,7 @@ const Services = () => {
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
-              {/* about-img */}
+              
               <div className="about-img">
                 <div className="about-font-img">
                   <img src="assets/img/gallery/about2.png" alt="" />
@@ -289,7 +288,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     {/* About Law End*/}
   </main>
   <footer>
@@ -308,10 +307,10 @@ const Services = () => {
                     <img src="assets/img/logo/logo2_footer.png" alt="" />
                   </a>
                 </div>
-                <d iv="" className="header-area">
+                {/* <d iv="" className="header-area">
                   <div className="main-header main-header2">
                     <div className="menu-main d-flex align-items-center justify-content-start">
-                      {/* Main-menu */}
+                      
                       <div className="main-menu main-menu2">
                         <nav>
                           <ul>
@@ -335,7 +334,7 @@ const Services = () => {
                       </div>
                     </div>
                   </div>
-                </d>
+                </d> */}
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">

@@ -47,12 +47,12 @@ async function submitHandler(e) {
     })
     // ,reason => { 
     //   console.error(reason);
-    //   setError('Invalid Username or Password')
+     //   setError('Invalid Username or Password')
     // }}
     
 //     setLoading(false);
 // }catch{
-  // setEmail("");
+  // setEmail("");"http://mentalhealthyapi.herokuapp.com/api/allBlogs""http://mentalhealthyapi.herokuapp.com/api/allBlogs"
   // setPassword("");
 //   console.log('Error message',JSON.stringify(Error.message));
 //   setLoading(false);

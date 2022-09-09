@@ -56,9 +56,9 @@ const About = () => {
                           <li>
                             <Link to="/BlogDetails">BlogDetails</Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link to="/Elements">Element</Link>
-                          </li>
+                          </li> */}
                         </ul>
                       </li>
                       <li>
@@ -206,14 +206,14 @@ const About = () => {
       </div>
     </div>
     {/*? Testimonial Area Start */}
-    <section className="testimonial-area testimonial-padding fix">
+    {/* <section className="testimonial-area testimonial-padding fix">
       <div className="container">
         <div className="row align-items-center justify-content-center">
           <div className=" col-lg-9">
             <div className="about-caption">
-              {/* Testimonial Start */}
+             
               <div className="h1-testimonial-active dot-style">
-                {/* Single Testimonial */}
+           
                 <div className="single-testimonial position-relative">
                   <div className="testimonial-caption">
                     <img
@@ -227,7 +227,7 @@ const About = () => {
                       Placeholder text commonly used. In publishing and graphic.
                     </p>
                   </div>
-                  {/* founder */}
+                
                   <div className="testimonial-founder d-flex align-items-center">
                     <div className="founder-img">
                       <img src="assets/img/icon/testimonial.png" alt="" />
@@ -239,15 +239,15 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              {/* Testimonial End */}
+              
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     {/*? Testimonial Area End */}
     {/*? video_start */}
-    <div className="container">
+    {/* <div className="container">
       <div
         className="video-area section-bg2 d-flex align-items-center"
         data-background="assets/img/gallery/video-bg.png"
@@ -263,12 +263,12 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
     {/* video_end */}
     {/*? Blog Area Start */}
-    <section className="home-blog-area section-padding30">
+    {/* <section className="home-blog-area section-padding30">
       <div className="container">
-        {/* Section Tittle */}
+        
         <div className="row justify-content-center">
           <div className="col-lg-7 col-md-9 col-sm-10">
             <div className="section-tittle text-center mb-100">
@@ -335,16 +335,16 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     {/* Blog Area End */}
     {/*? About Law Start*/}
-    <section className="about-low-area mt-30">
+    {/* <section className="about-low-area mt-30">
       <div className="container">
         <div className="about-cap-wrapper">
           <div className="row">
             <div className="col-xl-5  col-lg-6 col-md-10 offset-xl-1">
               <div className="about-caption mb-50">
-                {/* Section Tittle */}
+               
                 <div className="section-tittle mb-35">
                   <h2>100% satisfaction guaranteed.</h2>
                 </div>
@@ -355,7 +355,7 @@ const About = () => {
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
-              {/* about-img */}
+              
               <div className="about-img">
                 <div className="about-font-img">
                   <img src="assets/img/gallery/about2.png" alt="" />
@@ -365,7 +365,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     {/* About Law End*/}
   </main>
   <footer>
@@ -379,15 +379,15 @@ const About = () => {
             <div className="col-xl-8 col-lg-8 col-md-6 col-sm-12">
               <div className="single-footer-caption mb-50">
                 {/* logo */}
-                <div className="footer-logo mb-25">
+                {/* <div className="footer-logo mb-25">
                   <a href="index.html">
                     <img src="assets/img/logo/logo2_footer.png" alt="" />
                   </a>
-                </div>
-                <d iv="" className="header-area">
+                </div> */}
+                {/* <d iv="" className="header-area">
                   <div className="main-header main-header2">
                     <div className="menu-main d-flex align-items-center justify-content-start">
-                      {/* Main-menu */}
+                     
                       <div className="main-menu main-menu2">
                         <nav>
                           <ul>
@@ -411,7 +411,7 @@ const About = () => {
                       </div>
                     </div>
                   </div>
-                </d>
+                </d> */}
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">

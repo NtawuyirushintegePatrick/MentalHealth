@@ -55,9 +55,9 @@ const Home = () => {
                           <li>
                             <Link to="/BlogDetails">BlogDetails</Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link to="/Elements">Element</Link>
-                          </li>
+                          </li> */}
                         </ul>
                       </li>
                       <li>

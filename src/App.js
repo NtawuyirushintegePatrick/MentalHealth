@@ -9,7 +9,7 @@ import BlogDetails from "./components/BlogDetails";
 import Blogs from "./components/Blogs";
 import Services from "./components/Services";
 import Contacts from "./components/Contacts";
-import Element  from "./components/Element";
+// import Element  from "./components/Element";
 import Dashboard from "./components/Dashboard";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
@@ -36,7 +36,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="blogDetails" element={<BlogDetails />}/>
           <Route path="services" element={<Services />}/>
-          <Route path="element" element={<Element/>}/>
+          {/* <Route path="element" element={<Element/>}/> */}
           <Route path="dashboard" element={<Dashboard/>}/>
           <Route path="signin" element={<Signin/>}/>
           <Route path="signup" element={<Signup/>}/>
