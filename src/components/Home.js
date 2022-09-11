@@ -5,18 +5,6 @@ const Home = () => {
   return (
     <>
     
-
-    {/* <div id="preloader-active">
-    <div className="preloader d-flex align-items-center justify-content-center">
-      <div className="preloader-inner position-relative">
-        <div className="preloader-circle" />
-        <div className="preloader-img pere-text">
-          <img src="assets/img/logo/loder.png" alt="" />
-        </div>
-      </div>
-    </div>
-  </div> */}
-  {/* Preloader Start */}
   <header>
     {/*? Header Start */}
     <div className="header-area">
@@ -94,10 +82,10 @@ const Home = () => {
               <div className="col-xl-7 col-lg-8 col-md-10 ">
                 <div className="hero-wrapper">
                   <div className="hero__caption">
-                    <h1 data-animation="fadeInUp" data-delay=".3s">
+                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"white"}} border>
                      Mental Health is wealth keep it healthy mentally
                     </h1>
-                    <p data-animation="fadeInUp" data-delay=".6s">
+                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"white"}}>
                       Almost before we knew it, we
                       <br /> had left the ground
                     </p>
@@ -133,7 +121,7 @@ const Home = () => {
           <div className="col-lg-7 col-md-12">
             {/* about-img */}
             <div className="about-img ">
-              <img src="assets/img/gallery/about.png" alt="" />
+              <img src="assets/img/gallery/about.jpg" alt="" />
             </div>
           </div>
           <div className="col-lg-5 col-md-12">
@@ -277,12 +265,12 @@ const Home = () => {
                  
                   {/* founder */}
                   <div className="testimonial-founder d-flex align-items-center">
-                    <div className="founder-img">
+                    {/* <div className="founder-img">
                       <img src="assets/img/icon/testimonial.png" alt="" />
-                    </div>
+                    </div> */}
                     <div className="founder-text">
-                      <span>Robart Brown</span>
-                      <p>Creative designer at Colorlib</p>
+                      <span>Ntawuyirushintege Patrick</span>
+                      <p>Creative designer at Mental Health Center</p>
                     </div>
                   </div>
                 </div>
@@ -384,77 +372,6 @@ const Home = () => {
         </div>
       </div>
     </section>
-    {/* <section className="home-blog-area section-padding30" id='blogs'>
-      <div className="container">
-      
-        <div className="row justify-content-center">
-          <div className="col-lg-7 col-md-9 col-sm-10">
-            <div className="section-tittle text-center mb-100">
-              <h2>Quotes</h2>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-4 col-md-6">
-            <div className="home-blog-single mb-40">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                  <img src="assets/img/gallery/quote3.jpeg" alt="" />
-                </div>
-                <div className="blog-cap">
-                  <h3>
-                    <a href="blog_details.html">Your daily meal plan</a>
-                  </h3>
-                  <p>
-                    Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
-                    dignissim dolor, a pretium mi sem ut ipsum.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="home-blog-single mb-40">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                  <img src="assets/img/gallery/quote2.jpg" alt="" />
-                </div>
-                <div className="blog-cap">
-                  <h3>
-                    <a href="blog_details.html">
-                      Food is a great source of medicine
-                    </a>
-                  </h3>
-                  <p>
-                    Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
-                    dignissim dolor, a pretium mi sem ut ipsum.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="home-blog-single mb-40">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                <img src="assets/img/gallery/quote3.jpeg" alt="" />
-                </div>
-                <div className="blog-cap">
-                  <h3>
-                    <a href="blog_details.html">Everyday diet plan</a>
-                  </h3>
-                  <p>
-                    Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
-                    dignissim dolor, a pretium mi sem ut ipsum.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> */}
-    {/* Blog Area End */}
     {/*? About Law Start*/}
     <section className="about-low-area mt-30" id='about'>
       <div className="container">
@@ -467,16 +384,13 @@ const Home = () => {
                   <h2>100% satisfaction guaranteed.</h2>
                 </div>
                 <p>Almost before we knew it, we had left the ground</p>
-                {/* <a href="about.html" className="border-btn">
-                  Make an Appointment
-                </a> */}
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
               {/* about-img */}
               <div className="about-img">
                 <div className="about-font-img">
-                  <img src="assets/img/gallery/about2.png" alt="" />
+                  <img src="assets/img/gallery/about2.jpg" alt="" />
                 </div>
               </div>
             </div>
@@ -502,34 +416,7 @@ const Home = () => {
                     <img src="assets/img/logo/logo2_footer.png" alt="" />
                   </a>
                 </div>
-                {/* <d iv="" className="header-area">
-                  <div className="main-header main-header2">
-                    <div className="menu-main d-flex align-items-center justify-content-start">
-                      
-                      <div className="main-menu main-menu2">
-                        <nav>
-                          <ul>
-                            <li>
-                              <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                              <a href="about.html">About</a>
-                            </li>
-                            <li>
-                              <a href="services.html">Services</a>
-                            </li>
-                            <li>
-                              <a href="blog.html">Blog</a>
-                            </li>
-                            <li>
-                              <a href="contact.html">Contact</a>
-                            </li>
-                          </ul>
-                        </nav>
-                      </div>
-                    </div>
-                  </div>
-                </d> */}
+               
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">

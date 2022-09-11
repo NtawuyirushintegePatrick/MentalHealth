@@ -6,17 +6,7 @@ const About = () => {
     <>
     
     <>
-  {/* ? Preloader Start */}
-  {/* <div id="preloader-active">
-    <div className="preloader d-flex align-items-center justify-content-center">
-      <div className="preloader-inner position-relative">
-        <div className="preloader-circle" />
-        <div className="preloader-img pere-text">
-          <img src="assets/img/logo/loder.png" alt="" />
-        </div>
-      </div>
-    </div>
-  </div> */}
+  
   {/* Preloader Start */}
   <header>
     {/*? Header Start */}
@@ -95,10 +85,10 @@ const About = () => {
               <div className="col-xl-7 col-lg-8 col-md-10 ">
                 <div className="hero-wrapper">
                   <div className="hero__caption">
-                    <h1 data-animation="fadeInUp" data-delay=".3s">
+                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"white"}}>
                       About
                     </h1>
-                    <p data-animation="fadeInUp" data-delay=".6s">
+                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"white"}}>
                       Almost before we knew it, we
                       <br /> had left the ground
                     </p>

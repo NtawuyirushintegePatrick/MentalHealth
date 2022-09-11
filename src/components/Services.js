@@ -95,10 +95,10 @@ const Services = () => {
               <div className="col-xl-7 col-lg-8 col-md-10 ">
                 <div className="hero-wrapper">
                   <div className="hero__caption">
-                    <h1 data-animation="fadeInUp" data-delay=".3s">
+                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"white"}}>
                       Services
                     </h1>
-                    <p data-animation="fadeInUp" data-delay=".6s">
+                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"white"}}>
                       Almost before we knew it, we
                       <br /> had left the ground
                     </p>
