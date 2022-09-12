@@ -108,7 +108,7 @@ const About = () => {
           <div className="col-lg-4 col-md-6 col-sm-8">
             <div className="single-cat text-center mb-30">
               <div className="cat-icon">
-                <img src="assets/img/gallery/team1.png" alt="" />
+                <img src="assets/img/gallery/t1.jpg" alt="" />
               </div>
               <div className="cat-cap">
                 <h5>
@@ -124,7 +124,7 @@ const About = () => {
           <div className="col-lg-4 col-md-6 col-sm-8">
             <div className="single-cat text-center mb-30">
               <div className="cat-icon">
-                <img src="assets/img/gallery/team2.png" alt="" />
+                <img src="assets/img/gallery/t2.jpg" alt="" />
               </div>
               <div className="cat-cap">
                 <h5>
@@ -140,7 +140,7 @@ const About = () => {
           <div className="col-lg-4 col-md-6 col-sm-8">
             <div className="single-cat text-center mb-30">
               <div className="cat-icon">
-                <img src="assets/img/gallery/team3.png" alt="" />
+                <img src="assets/img/gallery/t33.jpg" alt="" />
               </div>
               <div className="cat-cap">
                 <h5>
@@ -165,7 +165,7 @@ const About = () => {
           <div className="col-lg-7 col-md-12">
             {/* about-img */}
             <div className="about-img ">
-              <img src="assets/img/gallery/about.png" alt="" />
+              <img src="assets/img/gallery/about.jpg" alt="" />
             </div>
           </div>
           <div className="col-lg-5 col-md-12">
@@ -196,166 +196,6 @@ const About = () => {
       </div>
     </div>
     {/*? Testimonial Area Start */}
-    {/* <section className="testimonial-area testimonial-padding fix">
-      <div className="container">
-        <div className="row align-items-center justify-content-center">
-          <div className=" col-lg-9">
-            <div className="about-caption">
-             
-              <div className="h1-testimonial-active dot-style">
-           
-                <div className="single-testimonial position-relative">
-                  <div className="testimonial-caption">
-                    <img
-                      src="assets/img/icon/quotes-sign.png"
-                      alt=""
-                      className="quotes-sign"
-                    />
-                    <p>
-                      "The automated process starts as soon as your clothe go
-                      into the machine. This site outcome is gleaming clothe.
-                      Placeholder text commonly used. In publishing and graphic.
-                    </p>
-                  </div>
-                
-                  <div className="testimonial-founder d-flex align-items-center">
-                    <div className="founder-img">
-                      <img src="assets/img/icon/testimonial.png" alt="" />
-                    </div>
-                    <div className="founder-text">
-                      <span>Robart Brown</span>
-                      <p>Creative designer at Colorlib</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> */}
-    {/*? Testimonial Area End */}
-    {/*? video_start */}
-    {/* <div className="container">
-      <div
-        className="video-area section-bg2 d-flex align-items-center"
-        data-background="assets/img/gallery/video-bg.png"
-      >
-        <div className="video-wrap position-relative">
-          <div className="video-icon">
-            <a
-              className="popup-video btn-icon"
-              href="https://www.youtube.com/watch?v=up68UAfH0d0"
-            >
-              <i className="fas fa-play" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div> */}
-    {/* video_end */}
-    {/*? Blog Area Start */}
-    {/* <section className="home-blog-area section-padding30">
-      <div className="container">
-        
-        <div className="row justify-content-center">
-          <div className="col-lg-7 col-md-9 col-sm-10">
-            <div className="section-tittle text-center mb-100">
-              <h2>Latest Blog</h2>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-4 col-md-6">
-            <div className="home-blog-single mb-40">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                  <img src="assets/img/gallery/blog1.png" alt="" />
-                </div>
-                <div className="blog-cap">
-                  <h3>
-                    <a href="blog_details.html">Your daily meal plan</a>
-                  </h3>
-                  <p>
-                    Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
-                    dignissim dolor, a pretium mi sem ut ipsum.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="home-blog-single mb-40">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                  <img src="assets/img/gallery/blog2.png" alt="" />
-                </div>
-                <div className="blog-cap">
-                  <h3>
-                    <a href="blog_details.html">
-                      Food is a great source of medicine
-                    </a>
-                  </h3>
-                  <p>
-                    Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
-                    dignissim dolor, a pretium mi sem ut ipsum.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="home-blog-single mb-40">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                  <img src="assets/img/gallery/blog3.png" alt="" />
-                </div>
-                <div className="blog-cap">
-                  <h3>
-                    <a href="blog_details.html">Everyday diet plan</a>
-                  </h3>
-                  <p>
-                    Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
-                    dignissim dolor, a pretium mi sem ut ipsum.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> */}
-    {/* Blog Area End */}
-    {/*? About Law Start*/}
-    {/* <section className="about-low-area mt-30">
-      <div className="container">
-        <div className="about-cap-wrapper">
-          <div className="row">
-            <div className="col-xl-5  col-lg-6 col-md-10 offset-xl-1">
-              <div className="about-caption mb-50">
-               
-                <div className="section-tittle mb-35">
-                  <h2>100% satisfaction guaranteed.</h2>
-                </div>
-                <p>Almost before we knew it, we had left the ground</p>
-                <a href="about.html" className="border-btn">
-                  Make an Appointment
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-12">
-              
-              <div className="about-img">
-                <div className="about-font-img">
-                  <img src="assets/img/gallery/about2.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> */}
     {/* About Law End*/}
   </main>
   <footer>
@@ -368,40 +208,7 @@ const About = () => {
           <div className="row justify-content-between">
             <div className="col-xl-8 col-lg-8 col-md-6 col-sm-12">
               <div className="single-footer-caption mb-50">
-                {/* logo */}
-                {/* <div className="footer-logo mb-25">
-                  <a href="index.html">
-                    <img src="assets/img/logo/logo2_footer.png" alt="" />
-                  </a>
-                </div> */}
-                {/* <d iv="" className="header-area">
-                  <div className="main-header main-header2">
-                    <div className="menu-main d-flex align-items-center justify-content-start">
-                     
-                      <div className="main-menu main-menu2">
-                        <nav>
-                          <ul>
-                            <li>
-                              <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                              <a href="about.html">About</a>
-                            </li>
-                            <li>
-                              <a href="services.html">Services</a>
-                            </li>
-                            <li>
-                              <a href="blog.html">Blog</a>
-                            </li>
-                            <li>
-                              <a href="contact.html">Contact</a>
-                            </li>
-                          </ul>
-                        </nav>
-                      </div>
-                    </div>
-                  </div>
-                </d> */}
+                
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">
