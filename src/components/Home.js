@@ -82,10 +82,10 @@ const Home = () => {
               <div className="col-xl-7 col-lg-8 col-md-10 ">
                 <div className="hero-wrapper">
                   <div className="hero__caption">
-                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"white"}} border>
+                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"black"}} border>
                      Mental Health is wealth keep it healthy mentally
                     </h1>
-                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"white"}}>
+                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"black"}}>
                       Almost before we knew it, we
                       <br /> had left the ground
                     </p>
@@ -94,6 +94,7 @@ const Home = () => {
                       className="btn"
                       data-animation="fadeInLeft"
                       data-delay=".3s"
+                      style={{marginRight:"10px"}}
                     >
                       Take mental health Servey
                     </Link>
@@ -121,7 +122,7 @@ const Home = () => {
           <div className="col-lg-7 col-md-12">
             {/* about-img */}
             <div className="about-img ">
-              <img src="assets/img/gallery/about.jpg" alt="" />
+              <img src="assets/img/gallery/he.jpg" alt="" />
             </div>
           </div>
           <div className="col-lg-5 col-md-12">
@@ -287,6 +288,7 @@ const Home = () => {
       <div
         className="video-area section-bg2 d-flex align-items-center"
         data-background="assets/img/gallery/video-bg.png"
+        style={{backgroundImage:"url('https://images.pexels.com/photos/6756372/pexels-photo-6756372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"}}
       >
         <div className="video-wrap position-relative">
           <div className="video-icon">
@@ -390,7 +392,7 @@ const Home = () => {
               {/* about-img */}
               <div className="about-img">
                 <div className="about-font-img">
-                  <img src="assets/img/gallery/about2.jpg" alt="" />
+                  <img src="assets/img/gallery/head.jpg" alt="" />
                 </div>
               </div>
             </div>
@@ -416,7 +418,34 @@ const Home = () => {
                     <img src="assets/img/logo/logo2_footer.png" alt="" />
                   </a>
                 </div>
-               
+                <d iv="" className="header-area">
+                  <div className="main-header main-header2">
+                    <div className="menu-main d-flex align-items-center justify-content-start">
+                      
+                      <div className="main-menu main-menu2">
+                        <nav>
+                          <ul>
+                            <li>
+                              <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                              <a href="about.html">About</a>
+                            </li>
+                            <li>
+                              <a href="services.html">Services</a>
+                            </li>
+                            <li>
+                              <a href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                              <a href="contact.html">Contact</a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </d>
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">

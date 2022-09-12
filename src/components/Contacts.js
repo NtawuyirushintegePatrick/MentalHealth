@@ -94,10 +94,10 @@ const Contacts = () => {
               <div className="col-xl-7 col-lg-8 col-md-10 ">
                 <div className="hero-wrapper">
                   <div className="hero__caption">
-                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"white"}}>
-                      contact
+                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"black"}}>
+                      Contact
                     </h1>
-                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"white"}}>
+                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"black"}}>
                       Almost before we knew it, we
                       <br /> had left the ground
                     </p>
@@ -1771,7 +1771,7 @@ const Contacts = () => {
         </div>
       </div>
     </section>
-    {/* <section className="about-low-area mt-60">
+    <section className="about-low-area mt-60">
       <div className="container">
         <div className="about-cap-wrapper">
           <div className="row">
@@ -1782,23 +1782,23 @@ const Contacts = () => {
                   <h2>100% satisfaction guaranteed.</h2>
                 </div>
                 <p>Almost before we knew it, we had left the ground</p>
-                <a href="about.html" className="border-btn">
+                {/* <a href="about.html" className="border-btn">
                   Make an Appointment
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
               
               <div className="about-img">
                 <div className="about-font-img">
-                  <img src="assets/img/gallery/about2.png" alt="" />
+                  <img src="assets/img/gallery/head.jpg" alt="" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section> */}
+    </section>
     {/* About Law End*/}
   </main>
   <footer>
@@ -1817,7 +1817,7 @@ const Contacts = () => {
                     <img src="assets/img/logo/logo2_footer.png" alt="" />
                   </a>
                 </div>
-                {/* <d iv="" className="header-area">
+                <d iv="" className="header-area">
                   <div className="main-header main-header2">
                     <div className="menu-main d-flex align-items-center justify-content-start">
                     
@@ -1844,7 +1844,7 @@ const Contacts = () => {
                       </div>
                     </div>
                   </div>
-                </d> */}
+                </d>
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">

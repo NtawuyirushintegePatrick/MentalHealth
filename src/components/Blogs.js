@@ -95,10 +95,10 @@ const Blogs = () => {
               <div className="col-xl-7 col-lg-8 col-md-10 ">
                 <div className="hero-wrapper">
                   <div className="hero__caption">
-                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"white"}}>
+                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"black"}}>
                       Blog
                     </h1>
-                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"white"}}>
+                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"black"}}>
                       Almost before we knew it, we
                       <br /> had left the ground
                     </p>
@@ -611,7 +611,7 @@ const Blogs = () => {
                     <img src="assets/img/logo/logo2_footer.png" alt="" />
                   </a>
                 </div>
-                {/* <d iv="" className="header-area">
+                <d iv="" className="header-area">
                   <div className="main-header main-header2">
                     <div className="menu-main d-flex align-items-center justify-content-start">
                       
@@ -638,7 +638,7 @@ const Blogs = () => {
                       </div>
                     </div>
                   </div>
-                </d> */}
+                </d>
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">

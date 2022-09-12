@@ -529,6 +529,7 @@ const Dashboardui = () => {
                             name="myImage"
                             value={Image}
                             onChange={(e) => setImage(e.target.value)}
+                            
                             className="form-control"
                             placeholder="Image"
                           />

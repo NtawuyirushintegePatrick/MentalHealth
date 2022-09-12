@@ -85,10 +85,10 @@ const About = () => {
               <div className="col-xl-7 col-lg-8 col-md-10 ">
                 <div className="hero-wrapper">
                   <div className="hero__caption">
-                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"white"}}>
+                    <h1 data-animation="fadeInUp" data-delay=".3s" style={{color:"black"}}>
                       About
                     </h1>
-                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"white"}}>
+                    <p data-animation="fadeInUp" data-delay=".6s" style={{color:"black"}}>
                       Almost before we knew it, we
                       <br /> had left the ground
                     </p>
@@ -156,8 +156,6 @@ const About = () => {
         </div>
       </div>
     </section>
-    {/*? Team End*/}
-    {/* Services End*/}
     {/*? About-2 Area Start */}
     <div className="about-area2 section-padding40">
       <div className="container">
@@ -165,7 +163,7 @@ const About = () => {
           <div className="col-lg-7 col-md-12">
             {/* about-img */}
             <div className="about-img ">
-              <img src="assets/img/gallery/about.jpg" alt="" />
+              <img src="assets/img/gallery/he.jpg" alt="" />
             </div>
           </div>
           <div className="col-lg-5 col-md-12">
@@ -195,10 +193,36 @@ const About = () => {
         </div>
       </div>
     </div>
-    {/*? Testimonial Area Start */}
-    {/* About Law End*/}
+    <section className="about-low-area mt-60">
+      <div className="container">
+        <div className="about-cap-wrapper">
+          <div className="row">
+            <div className="col-xl-5  col-lg-6 col-md-10 offset-xl-1">
+              <div className="about-caption mb-50">
+               
+                <div className="section-tittle mb-35">
+                  <h2>100% satisfaction guaranteed.</h2>
+                </div>
+                <p>Almost before we knew it, we had left the ground</p>
+                {/* <a href="about.html" className="border-btn">
+                  Make an Appointment
+                </a> */}
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-12">
+              
+              <div className="about-img">
+                <div className="about-font-img">
+                  <img src="assets/img/gallery/head.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>
+  <footer style={{marginTop:"5px"}}>
     <div
       className="footer-wrappr section-bg3"
       data-background="assets/img/gallery/footer-bg.png"
@@ -208,7 +232,39 @@ const About = () => {
           <div className="row justify-content-between">
             <div className="col-xl-8 col-lg-8 col-md-6 col-sm-12">
               <div className="single-footer-caption mb-50">
-                
+              <div className="footer-logo mb-25">
+                  <a href="index.html">
+                    <img src="assets/img/logo/logo2_footer.png" alt="" />
+                  </a>
+                </div>
+                <d iv="" className="header-area">
+                  <div className="main-header main-header2">
+                    <div className="menu-main d-flex align-items-center justify-content-start">
+                      
+                      <div className="main-menu main-menu2">
+                        <nav>
+                          <ul>
+                            <li>
+                              <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                              <a href="about.html">About</a>
+                            </li>
+                            <li>
+                              <a href="services.html">Services</a>
+                            </li>
+                            <li>
+                              <a href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                              <a href="contact.html">Contact</a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </d>
                 {/* social */}
                 <div className="footer-social mt-50">
                   <a href="#">
@@ -281,14 +337,8 @@ const About = () => {
             <div className="row">
               <div className="col-xl-10 ">
                 <div className="footer-copy-right">
-                  <p>
-                    {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                    Copyright © All rights reserved {" "}
-                    {/* <i className="fa fa-heart" aria-hidden="true" /> by{" "}
-                    <a href="https://colorlib.com" target="_blank">
-                      Colorlib
-                    </a> */}
-                    {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
+                  <p>                
+                    Copyright © All rights reserved {" "}               
                   </p>
                 </div>
               </div>
