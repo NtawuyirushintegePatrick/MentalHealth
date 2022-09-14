@@ -45,20 +45,6 @@ async function submitHandler(e) {
       if(localStorage.getItem('token')!==null) 
       navigate('/Dashboard')
     })
-    // ,reason => { 
-    //   console.error(reason);
-     //   setError('Invalid Username or Password')
-    // }}
-    
-//     setLoading(false);
-// }catch{
-  // setEmail("");"http://mentalhealthyapi.herokuapp.com/api/allBlogs""http://mentalhealthyapi.herokuapp.com/api/allBlogs"
-  // setPassword("");
-//   console.log('Error message',JSON.stringify(Error.message));
-//   setLoading(false);
-// }
-// if(localStorage.getItem('token')) navigate('/Dashboard')
-//     else navigate('/Signin')
    };
 
 

@@ -21,60 +21,77 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios";
+import  axios from "axios";
 import { id } from "date-fns/locale";
+import { DataGrid} from '@mui/x-data-grid';
 
-      
-const styledTable = styled(Table)`
-width:100%;
-margin: 50px auto 0 auto;
-`
-const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-  width: 62,
-  height: 34,
-  padding: 7,
-  '& .MuiSwitch-switchBase': {
-    margin: 1,
-    padding: 0,
-    transform: 'translateX(6px)',
-    '&.Mui-checked': {
-      color: '#fff',
-      transform: 'translateX(22px)',
-      '& .MuiSwitch-thumb:before': {
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
-          '#fff',
-        )}" d="M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z"/></svg>')`,
-      },
-      '& + .MuiSwitch-track': {
-        opacity: 1,
-        backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
-      },
-    },
-  },
-  '& .MuiSwitch-thumb': {
-    backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#001e3c',
-    width: 32,
-    height: 32,
-    '&:before': {
-      content: "''",
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-      left: 0,
-      top: 0,
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
-        '#fff',
-      )}" d="M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z"/></svg>')`,
-    },
-  },
-  '& .MuiSwitch-track': {
-    opacity: 1,
-    backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
-    borderRadius: 20 / 2,
-  },
-}));
+
+const columns = [
+  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'title', headerName: 'Title', width: 130 },
+  { field: 'content', headerName: 'Image', width: 130 },
+  { field: 'action',margin:"5px",width: 'auto',renderCell:(params)=>{return(
+    <>
+    <div style={{margin:"10px"}}>
+    <Button variant="outlined">Edit</Button>
+    <Button variant="outlined">Delete</Button>
+    </div>
+   
+    </>
+  )}}
+];
+
+
+// const styledTable = styled(Table)`
+// width:100%;
+// margin: 50px auto 0 auto;
+// `
+// const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+//   width: 62,
+//   height: 34,
+//   padding: 7,
+//   '& .MuiSwitch-switchBase': {
+//     margin: 1,
+//     padding: 0,
+//     transform: 'translateX(6px)',
+//     '&.Mui-checked': {
+//       color: '#fff',
+//       transform: 'translateX(22px)',
+//       '& .MuiSwitch-thumb:before': {
+//         backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+//           '#fff',
+//         )}" d="M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z"/></svg>')`,
+//       },
+//       '& + .MuiSwitch-track': {
+//         opacity: 1,
+//         backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
+//       },
+//     },
+//   },
+//   '& .MuiSwitch-thumb': {
+//     backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#001e3c',
+//     width: 32,
+//     height: 32,
+//     '&:before': {
+//       content: "''",
+//       position: 'absolute',
+//       width: '100%',
+//       height: '100%',
+//       left: 0,
+//       top: 0,
+//       backgroundRepeat: 'no-repeat',
+//       backgroundPosition: 'center',
+//       backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+//         '#fff',
+//       )}" d="M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z"/></svg>')`,
+//     },
+//   },
+//   '& .MuiSwitch-track': {
+//     opacity: 1,
+//     backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
+//     borderRadius: 20 / 2,
+//   },
+// }));
 
 const style = {
   position: "absolute",
@@ -83,7 +100,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  // border: "2px solid #000",
+
   boxShadow: 24,
   p: 4,
 };
@@ -93,21 +110,58 @@ const Dashboardui = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // const [startDate, setStartDate] = useState(new Date());
 
   const [Title, setTitle] = useState("");
   const [Content, setContent] = useState("");
   const [Image, setImage] = useState("");
-  // const [Author,setAuthor] = useState("");
-  const [Data,setData] = useState([]);
+ 
   const [blogs,setBlogs]=useState([]);
 
-  const newBlog = {
-    id:id,
-    title: Title,
-    content: Content,
-    image: Image,
-  };
+  const url="http://mentalhealthyapi.herokuapp.com/api/createBlog"
+   const [data,setData] = useState({
+    title : "",
+    content : "",
+    image : ""
+   });
+
+   function handleSubmit(e){
+    const newdata ={...data}
+    newdata[e.target.id]= e.target.value
+    setData(newdata)
+    console.log(newdata)
+   }
+
+   function submit(e){
+      e.preventDefault()
+      const Token = localStorage.getItem("token")
+   
+        const options = {
+          headers: {'Authorization': `bearer ${Token}`}
+        };
+      axios.post(url,{
+        title:data.title,
+        content:data.content,
+        image:data.image
+        
+      },options
+      )
+      .then(res=>{
+        console.log(res.data)
+      })
+   }
+  const [rows,setRows]=useState([])
+   useEffect(()=>{
+    axios.get("http://mentalhealthyapi.herokuapp.com/api/allBlogs").then((data)=>{
+      setRows([...data?.data?.Blogs])
+    })
+   })
+
+  // const newBlog = {
+  //   id:id,
+  //   title: Title,
+  //   content: Content,
+  //   image: Image,
+  // };
 
   
 
@@ -153,45 +207,47 @@ const Dashboardui = () => {
   //     </Stack>
   //   ),
   // ];
+  // ---------------------------------------------------------------------
 
-  async function HandleNewBlog(e){
-    const Token = localStorage.getItem("token")
-    e.preventDefault();
-    const options = {
-      headers: {'Authorization': `bearer ${Token}`}
-    };
-    await axios
-    .post("http://mentalhealthyapi.herokuapp.com/api/createBlog",
+  // async function HandleNewBlog(e){
+  //   const Token = localStorage.getItem("token")
+  //   e.preventDefault();
+  //   const options = {
+  //     headers: {'Authorization': `bearer ${Token}`}
+  //   };
+  //   await axios
+  //   .post("http://mentalhealthyapi.herokuapp.com/api/createBlog",
 
-      newBlog,
-      options
-    )
+  //     newBlog,
+  //     options
+  //   )
     
-    .then((res) => {
-       setData(res);
-      // console.log(res);
-      handlePost();
+  //   .then((res) => {
+  //      setData(res);
+  //     // console.log(res);
+  //     handlePost();
       
-    });
-  }
+  //   });
+  // }
 
-    async function handlePost (e){
-      await axios
-      .get("http://mentalhealthyapi.herokuapp.com/api/allBlogs")
+  //   async function handlePost (e){
+  //     await axios
+  //     .get("http://mentalhealthyapi.herokuapp.com/api/allBlogs")
       
-      .then((response) => {
-         setBlogs(response.data.Blogs);
-        console.log(response.data.Blogs);
+  //     .then((response) => {
+  //        setBlogs(response.data.Blogs);
+  //       console.log(response.data.Blogs);
         
 
-      })
-    }
+  //     })
+  //   }
 
 
-    function deleteBlogs(id){
-      setBlogs([...blogs].filter(blogs => blogs.id !== id));
-      console.log(blogs)
-    }
+  //   function deleteBlogs(id){
+  //     setBlogs([...blogs].filter(blogs => blogs.id !== id));
+  //     console.log(blogs)
+  //   }
+    // ----------------------------------------------------------------------
   
     // async function handleDelete (e){
 
@@ -378,11 +434,11 @@ const Dashboardui = () => {
                     </li>
                   </ul>
                 </div>
-                <FormGroup>
+                {/* <FormGroup>
       <FormControlLabel
         control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
       />
-      </FormGroup>
+      </FormGroup> */}
                 <div className="notification center">
                   <input type="checkbox" name="" id="" />
                   <div className="num number center">4</div>
@@ -478,7 +534,6 @@ const Dashboardui = () => {
               <div className="row stat-cards">
                 <div className="user-container">
                   <Button className="border" onClick={handleOpen}>Create blog</Button>
-                  {/* <Button className="border" onClick={handlePost}>All Blogs</Button> */}
                   <Modal
                     open={open}
                     onClose={handleClose}
@@ -495,7 +550,8 @@ const Dashboardui = () => {
                         <h>New blog being created</h>
                       </Typography>
                       <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        <div className="user-container-form">
+                        <form onSubmit={(e)=>submit(e)}>
+                          <div className="user-container-form">
                           <label>
                             <b>Title:</b>
                           </label>
@@ -504,8 +560,9 @@ const Dashboardui = () => {
                             className="form-control border"
                             placeholder=" Title"
                             name="title"
-                            value={Title}
-                            onChange={(e) => setTitle(e.target.value)}
+                            id="title"
+                            value={data.title}
+                            onChange={(e) => handleSubmit(e)}
                           />
                           <label>
                             <b>Content:</b>
@@ -514,9 +571,10 @@ const Dashboardui = () => {
                           <textarea
                             className="form-control"
                             placeholder="Content"
-                            name="Content"
-                            value={Content}
-                            onChange={(e) => setContent(e.target.value)}
+                            name="content"
+                            id="content"
+                            value={data.content}
+                            onChange={(e) => handleSubmit(e)}
                           ></textarea>
                           <br />
                          
@@ -526,25 +584,39 @@ const Dashboardui = () => {
                           </label>
                           <input
                             type="file"
-                            name="myImage"
-                            value={Image}
-                            onChange={(e) => setImage(e.target.value)}
+                            name="image"
+                            id="image"
+                            value={data.image}
+                            onChange={(e) => handleSubmit(e)}
                             
                             className="form-control"
                             placeholder="Image"
                           />
                        
                           <div className="user-button-field">
-                            <button className="user-button" onClick={HandleNewBlog}>Post Blog</button>
+                            <button className="user-button">Post Blog</button>
+
                           </div>
                         </div>
+                        </form>
+                        
                       </Typography>
                     </Box>
                   </Modal>
                   <br />
                   <br />
+                  <div style={{ height: 400, width: '100%' }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+      />
+    </div>
 
-                  <styledTable >
+
+                  {/* <styledTable >
                     <TableHead>
                       <TableRow>
                         <TableCell>ID</TableCell>
@@ -561,21 +633,18 @@ const Dashboardui = () => {
                             <TableCell>{blog.id}</TableCell>
                             <TableCell>{blog.title}</TableCell>
                             <TableCell>{blog.content}</TableCell>
-                            <TableCell><img
-                               src={blog.image}
-                        
-                        />
-                        
-                        </TableCell>
+                            <TableCell><img src={blog.image}/></TableCell>
                             <TableCell>
                               <Button variant="contained" style={{margin:"10px"}} >Edit</Button>
-                              <Button variant="contained" color="secondary" onClick={() => deleteBlogs(blogs.id)}>Delete</Button>
                             </TableCell>
                           </TableRow>
                         ))
                         }
                     </TableBody>
-                  </styledTable >
+                  </styledTable > */}
+
+
+                  {/* --------------------------------------------------------------------- */}
                   {/* <TableContainer
                     component={Paper}
                     style={{ marginLeft: "20%"}}
@@ -617,7 +686,7 @@ const Dashboardui = () => {
             </div>
           </main>
           {/* ! Footer */}
-          <footer className="footer">
+          {/* <footer className="footer">
             <div className="container footer--flex">
               <div className="footer-start">
                 <p>
@@ -643,7 +712,7 @@ const Dashboardui = () => {
                 </li>
               </ul>
             </div>
-          </footer>
+          </footer> */}
         </div>
       </div>
     </>
