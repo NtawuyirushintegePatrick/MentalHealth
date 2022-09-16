@@ -1,4 +1,4 @@
-import { React, useState,useEffect} from "react";
+import { React, useState, useEffect, useContext } from "react";
 // import styled from "@mui/material"
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -16,31 +16,52 @@ import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import ModeEditSharpIcon from "@mui/icons-material/ModeEditSharp";
 import { Link } from "react-router-dom";
-import { styled } from '@mui/material/styles';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
+import { styled } from "@mui/material/styles";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
 import "react-datepicker/dist/react-datepicker.css";
-import  axios from "axios";
-import { id } from "date-fns/locale";
-import { DataGrid} from '@mui/x-data-grid';
-
+import axios from "axios";
+import { DataGrid } from "@mui/x-data-grid";
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'title', headerName: 'Title', width: 130 },
-  { field: 'content', headerName: 'Image', width: 130 },
-  { field: 'action',margin:"5px",width: 'auto',renderCell:(params)=>{return(
-    <>
-    <div style={{margin:"10px"}}>
-    <Button variant="outlined">Edit</Button>
-    <Button variant="outlined">Delete</Button>
-    </div>
-   
-    </>
-  )}}
+  { field: "id", headerName: "ID", width: 70 },
+  { field: "title", headerName: "Title", width: 130 },
+  { field: "content", headerName: "Content", width: 130 },
+  { field: "image", headerName: "Image", width: 130 },
+  {
+    field: "action",
+    margin: "5px",
+    width: "auto",
+    renderCell: (params) => {
+      return (
+        <>
+          <div style={{ margin: "10px" }}>
+            <Button variant="outlined">Edit</Button>
+            <Button variant="outlined">Delete</Button>
+          </div>
+        </>
+      );
+    },
+  },
 ];
 
+// <Modal show={show} onHide={handleClose}>
+
+//     <Modal.Header closeButton>
+//       <Modal.Title>
+//         Edit Blog
+//       </Modal.Title>
+//     </Modal.Header>
+//     <Modal.Body>
+
+//     </Modal.Body>
+//     <Modal.Footer>
+//       <Button variant="secondary" onClick={handleClose}>
+//          Close Button
+//       </Button>
+//     </Modal.Footer>
+// </Modal>
 
 // const styledTable = styled(Table)`
 // width:100%;
@@ -110,51 +131,62 @@ const Dashboardui = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // const [show,setShow] = useState(false)
+  // const handleShow = () => setShow(true)
+  // const handleClosed = () => setShow(false)
 
   const [Title, setTitle] = useState("");
   const [Content, setContent] = useState("");
   const [Image, setImage] = useState("");
- 
-  const [blogs,setBlogs]=useState([]);
 
-  const url="http://mentalhealthyapi.herokuapp.com/api/createBlog"
-   const [data,setData] = useState({
-    title : "",
-    content : "",
-    image : ""
-   });
+  const [blogs, setBlogs] = useState([]);
 
-   function handleSubmit(e){
-    const newdata ={...data}
-    newdata[e.target.id]= e.target.value
-    setData(newdata)
-    console.log(newdata)
-   }
+  const url = "http://mentalhealthyapi.herokuapp.com/api/createBlog";
+  const [data, setData] = useState({
+    title: "",
+    content: "",
+    image: "",
+  });
 
-   function submit(e){
-      e.preventDefault()
-      const Token = localStorage.getItem("token")
-   
-        const options = {
-          headers: {'Authorization': `bearer ${Token}`}
-        };
-      axios.post(url,{
-        title:data.title,
-        content:data.content,
-        image:data.image
-        
-      },options
+  function handleSubmit(e) {
+    const newdata = { ...data };
+    newdata[e.target.id] = e.target.value;
+    setData(newdata);
+    console.log(newdata);
+  }
+
+  function submit(e) {
+    e.preventDefault();
+    const Token = localStorage.getItem("token");
+
+    const options = {
+      headers: { Authorization: `bearer ${Token}` },
+    };
+    axios
+      .post(
+        url,
+        {
+          title: data.title,
+          content: data.content,
+          image: data.image,
+        },
+        options
       )
-      .then(res=>{
-        console.log(res.data)
-      })
-   }
-  const [rows,setRows]=useState([])
-   useEffect(()=>{
-    axios.get("http://mentalhealthyapi.herokuapp.com/api/allBlogs").then((data)=>{
-      setRows([...data?.data?.Blogs])
-    })
-   })
+      .then((res) => {
+        console.log(res.data);
+      });
+  }
+  const [rows, setRows] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://mentalhealthyapi.herokuapp.com/api/allBlogs")
+      .then((data) => {
+        console.log(data)
+        setRows([...data?.data?.Blogs?.data]);
+      });
+  },[]);
+
+  //  const {updateBlog} = useContext(BlogContext);
 
   // const newBlog = {
   //   id:id,
@@ -163,14 +195,11 @@ const Dashboardui = () => {
   //   image: Image,
   // };
 
-  
-
   // const [value, setValue] = React.useState(new Date('2014-08-18T21:11:54'));
- 
+
   // const handleChange = (newValue) => {
   //   setValue(newValue);
   // };
-
 
   // function createData(image, title, content, carbs, protein) {
   //   return { image, title, content, carbs, protein };
@@ -221,69 +250,64 @@ const Dashboardui = () => {
   //     newBlog,
   //     options
   //   )
-    
+
   //   .then((res) => {
   //      setData(res);
   //     // console.log(res);
   //     handlePost();
-      
+
   //   });
   // }
 
   //   async function handlePost (e){
   //     await axios
   //     .get("http://mentalhealthyapi.herokuapp.com/api/allBlogs")
-      
+
   //     .then((response) => {
   //        setBlogs(response.data.Blogs);
   //       console.log(response.data.Blogs);
-        
 
   //     })
   //   }
-
 
   //   function deleteBlogs(id){
   //     setBlogs([...blogs].filter(blogs => blogs.id !== id));
   //     console.log(blogs)
   //   }
-    // ----------------------------------------------------------------------
-  
-    // async function handleDelete (e){
+  // ----------------------------------------------------------------------
 
-    //   const Token = localStorage.getItem("token")
-    //   e.preventDefault();
-    //   const options = {
-    //     headers: {'Authorization': `bearer ${Token}`}
-    //   };
-    //   const id = Blogs.id
-    //   await axios
-    //     .delete(`http://mentalhealthyapi.herokuapp.com/api/deleteBlog/${id}`);
-      
-    // }
+  // async function handleDelete (e){
 
-    // const getBlogs = async () => {
-    //   try{
-    //     return await axios.get("http://mentalhealthyapi.herokuapp.com/api/allBlogs");
-    //   }catch (error){
-    //      console.log('Error while fetching user from API',error.message);
-    //   }
-    // }
+  //   const Token = localStorage.getItem("token")
+  //   e.preventDefault();
+  //   const options = {
+  //     headers: {'Authorization': `bearer ${Token}`}
+  //   };
+  //   const id = Blogs.id
+  //   await axios
+  //     .delete(`http://mentalhealthyapi.herokuapp.com/api/deleteBlog/${id}`);
 
-   
+  // }
 
-    // const getBlogsDetails = async() => {
-    //     let response=await getBlogs();
-    //     console.log("response" +response);
+  // const getBlogs = async () => {
+  //   try{
+  //     return await axios.get("http://mentalhealthyapi.herokuapp.com/api/allBlogs");
+  //   }catch (error){
+  //      console.log('Error while fetching user from API',error.message);
+  //   }
+  // }
 
-    //     setBlogs(response.data)
-    // }
-    // console.log(blogs.Blogs);
+  // const getBlogsDetails = async() => {
+  //     let response=await getBlogs();
+  //     console.log("response" +response);
 
-    // useEffect(() =>{
-    //   getBlogsDetails();
-    // },[])
+  //     setBlogs(response.data)
+  // }
+  // console.log(blogs.Blogs);
 
+  // useEffect(() =>{
+  //   getBlogsDetails();
+  // },[])
 
   return (
     <>
@@ -533,88 +557,94 @@ const Dashboardui = () => {
               <br />
               <div className="row stat-cards">
                 <div className="user-container">
-                  <Button className="border" onClick={handleOpen}>Create blog</Button>
+                  <Button className="border" onClick={handleOpen}>
+                    Create blog
+                  </Button>
                   <Modal
                     open={open}
                     onClose={handleClose}
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                   >
-                    <Box sx={style} >
+                    <Box sx={style}>
                       <Typography
                         id="modal-modal-title"
                         variant="h6"
                         component="h2"
-
                       >
                         <h>New blog being created</h>
                       </Typography>
                       <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        <form onSubmit={(e)=>submit(e)}>
+                        <form onSubmit={(e) => submit(e)}>
                           <div className="user-container-form">
-                          <label>
-                            <b>Title:</b>
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control border"
-                            placeholder=" Title"
-                            name="title"
-                            id="title"
-                            value={data.title}
-                            onChange={(e) => handleSubmit(e)}
-                          />
-                          <label>
-                            <b>Content:</b>
-                          </label>
-                          <br />
-                          <textarea
-                            className="form-control"
-                            placeholder="Content"
-                            name="content"
-                            id="content"
-                            value={data.content}
-                            onChange={(e) => handleSubmit(e)}
-                          ></textarea>
-                          <br />
-                         
-                          <br />
-                          <label>
-                            <b>Image:</b>
-                          </label>
-                          <input
-                            type="file"
-                            name="image"
-                            id="image"
-                            value={data.image}
-                            onChange={(e) => handleSubmit(e)}
-                            
-                            className="form-control"
-                            placeholder="Image"
-                          />
-                       
-                          <div className="user-button-field">
-                            <button className="user-button">Post Blog</button>
+                            <label>
+                              <b>Title:</b>
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control border"
+                              placeholder=" Title"
+                              name="title"
+                              id="title"
+                              value={data.title}
+                              onChange={(e) => handleSubmit(e)}
+                            />
+                            <label>
+                              <b>Content:</b>
+                            </label>
+                            <br />
+                            <textarea
+                              className="form-control"
+                              placeholder="Content"
+                              name="content"
+                              id="content"
+                              value={data.content}
+                              onChange={(e) => handleSubmit(e)}
+                            ></textarea>
+                            <br />
 
+                            <br />
+                            <label>
+                              <b>Image:</b>
+                            </label>
+                            <input
+                              type="file"
+                              name="image"
+                              id="image"
+                              value={data.image}
+                              onChange={(e) => handleSubmit(e)}
+                              className="form-control"
+                              placeholder="Image"
+                            />
+
+                            <div className="user-button-field">
+                              <button className="user-button">Post Blog</button>
+                            </div>
                           </div>
-                        </div>
                         </form>
-                        
                       </Typography>
                     </Box>
                   </Modal>
                   <br />
                   <br />
-                  <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      />
-    </div>
+                  <div style={{ height: 400, width: "100%" }}>
+                    <DataGrid
+                      rows={rows}
+                      columns={columns}
+                      pageSize={5}
+                      rowsPerPageOptions={[5]}
+                      checkboxSelection
+                    />
+                  </div>
 
+                  {/* <Form>
+      <Form.Group>
+        <Form.Control>
+          type="text"
+          placeholder
+        </Form.Control>
+      </Form.Group>
+    </Form> */}
 
                   {/* <styledTable >
                     <TableHead>
@@ -642,7 +672,6 @@ const Dashboardui = () => {
                         }
                     </TableBody>
                   </styledTable > */}
-
 
                   {/* --------------------------------------------------------------------- */}
                   {/* <TableContainer
@@ -681,7 +710,7 @@ const Dashboardui = () => {
                       </TableBody>
                     </Table>
                   </TableContainer> */}
-                </div>               
+                </div>
               </div>
             </div>
           </main>
